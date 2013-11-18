@@ -4,7 +4,15 @@
  *
  * @link http://edb-brugs.dk
  */
-class EDBBrugsen 
+ 
+/**
+ * Generate the XML
+ *
+ * @author Lars Olesen <lars@intraface.dk>
+ * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
+ * @package EDBBrugs
+ */
+class EDBBrugsen
 {
     protected $username;
     protected $password;
@@ -46,10 +54,17 @@ class EDBBrugsen
 
     public function send()
     {
-       return $this->getRequest();
+        return $this->getRequest();
     }
 }
 
+/**
+ * Service Communicator with EDB-Brugs
+ * 
+ * @author Lars Olesen <lars@intraface.dk>
+ * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
+ * @package EDBBrugs
+ */
 class EDBBrugsen_Service
 {
     protected $response;
