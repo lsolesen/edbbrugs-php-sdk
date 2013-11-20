@@ -1,0 +1,8 @@
+<phpunit>
+  <php>
+    <const name="USERNAME" value=""/>
+    <const name="PASSWORD" value=""/>
+    <const name="SKOLEKODE" value=""/>
+    <const name="WSDL" value=""/>
+  </php>
+</phpunit>

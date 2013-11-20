@@ -12,7 +12,7 @@
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  * @package EDBBrugs
  */
-class EDBBrugsen
+class EDBBrugsen_Registration
 {
     protected $username;
     protected $password;
@@ -33,28 +33,19 @@ class EDBBrugsen
     
     public function getRequest()
     {
-        $output = array();
-        $output[] = '<?xml version="1.0" encoding="utf-8" standalone="yes" ?>';
-        $output[] = '<Tilmeldinger xmlns="http://edb-brugsen/tilmelding">';
-        $output[] = '  <User>';
-        $output[] = '    <Username>' . $this->username . '</Username>';
-        $output[] = '    <Passw>' . $this->password . '</Passw>';
-        $output[] = '    <Skolekode>' . $this->school_code . '</Skolekode>';
-        $output[] = '  </User>';
-        foreach ($this->registrations as $registration) {
-            $output[] = '  <Tilmelding>';
-            $output[] = '    <Fornavne>' . $registration['fornavne'] . '</Fornavne>';
-            $output[] = '    <Memo>' . $registration['memo'] . '</Memo>';
-            $output[] = '    <Kursus>' . $registration['kursus'] . '</Kursus>';
-            $output[] = '  </Tilmelding>';
+        $xml = new SimpleXMLElement('<Tilmeldinger/>');
+        $user = $xml->addChild('User');
+        $user->addChild('Username', $this->username);
+        $user->addChild('Skolekode', $this->school_code);
+        $user->addChild('Passw', $this->password);
+        foreach ($this->registrations as $r) {
+            $registration = $xml->addChild('Tilmelding');
+            foreach ($r as $k => $v) {
+                $registration->addChild($k, $v);
+            }
         }
-        $output[] = '</Tilmeldinger>';
-        return implode($output, "\n");
-    }
-
-    public function send()
-    {
-        return $this->getRequest();
+        
+        return $xml->asXml();
     }
 }
 
@@ -67,21 +58,26 @@ class EDBBrugsen
  */
 class EDBBrugsen_Service
 {
+    protected $soap;
     protected $response;
-    protected $endpoint;
     
-    function __construct($endpoint)
+    function __construct($soap)
     {
-        $this->endpoint = $endpoint;
+        $this->soap = $soap;
     }
     
-    function send(EDBBrugsen $request)
+    function addNewRegistration(EDBBrugsen_Registration $request)
     {
-        $this->response = $request->getRequest();
+        $request->getRequest();
+        $this->response = $this->soap->NyTilmelding2(array('XmlData' => new SoapVar($request->getRequest(), XSD_STRING)));
+        if (!$this->isOk()) {
+            throw new Exception($this->response->NyTilmelding2Result);
+        }
+        return $no_of_new_registrations = str_replace('Oprettelse Ok, nye tilmeldinger: ', '', $this->response->NyTilmelding2Result);
     }
     
     function isOk()
     {
-        print $this->response;
+        return (strpos($this->response->NyTilmelding2Result, 'Oprettelse Ok, nye tilmeldinger') !== false);
     }
 }
