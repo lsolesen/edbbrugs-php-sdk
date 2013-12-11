@@ -2,6 +2,7 @@ language: php
 
 php:
   - 5.3
+  - 5.4
 
 install:
   - pear channel-discover pear.phpunit.de
@@ -11,7 +12,7 @@ install:
   - php composer.phar update --no-interaction --dev
 
 before_script:
-- mkdir -p build/logs
+  - mkdir -p build/logs
 
 script: 
   - phpunit -c tests/phpunit.xml --exclude-group=IntegrationTest --coverage-clover build/logs/clover.xml ./tests
