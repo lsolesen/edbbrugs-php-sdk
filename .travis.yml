@@ -1,13 +1,21 @@
 language: php
+
 php:
   - 5.3
-before_script:
+
+install:
   - pear channel-discover pear.phpunit.de
   - pear install PHP_CodeSniffer
   - phpenv rehash
+  - curl -s http://getcomposer.org/installer | php
+  - php composer.phar update --no-interaction --dev
+
+before_script:
+- mkdir -p build/logs
+
 script: 
-  - cd tests
-  - phpunit --exclude-group=IntegrationTest .
-  - cd ..
+  - phpunit -c tests/phpunit.xml --exclude-group=IntegrationTest --coverage-clover build/logs/clover.xml ./tests
   - phpcs src
 
+after_script:
+  - php vendor/bin/coveralls -v
