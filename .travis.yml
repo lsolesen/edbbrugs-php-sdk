@@ -15,7 +15,7 @@ before_script:
   - mkdir -p build/logs
 
 script: 
-  - phpunit -c tests/phpunit.xml --exclude-group=IntegrationTest --coverage-clover build/logs/clover.xml ./tests
+  - phpunit -c tests/phpunit.behat.xml --exclude-group=IntegrationTest --coverage-clover build/logs/clover.xml ./tests
   - phpcs src
 
 after_script:
