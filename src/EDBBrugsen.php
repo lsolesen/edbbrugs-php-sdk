@@ -2,15 +2,18 @@
 /**
  * SDK to communicate with EDBBrugsen
  *
+ * PHP Version 5
+ *
+ * @package EDBBrugs
+ * @author Lars Olesen <lars@intraface.dk>
  * @link http://edb-brugs.dk
+ * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  */
  
 /**
  * Generate the XML
  *
  * @author Lars Olesen <lars@intraface.dk>
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- * @package EDBBrugs
  */
 class EDBBrugsen_Registration
 {
@@ -19,6 +22,15 @@ class EDBBrugsen_Registration
     protected $school_code;
     protected $registrations = array();
 
+    /**
+     * Constructor
+     * 
+     * @param string $username
+     * @param string $password
+     * @param string $school_code
+     *
+     * @return void
+     */
     public function __construct($username, $password, $school_code)
     {
         $this->username    = $username;
@@ -26,11 +38,23 @@ class EDBBrugsen_Registration
         $this->school_code = $school_code;
     }
 
-    public function addRegistration(array $registration)
+    /**
+     * Adds registration
+     * 
+     * @param array $registrations Array with registrations
+     *
+     * @return void
+     */
+    public function addRegistration(array $registrations)
     {
-        $this->registrations[] = $registration;
+        $this->registrations[] = $registrations;
     }
-    
+
+    /**
+     * Returns the XML request
+     *
+     * @return string
+     */
     public function getRequest()
     {
         $xml = new SimpleXMLElement('<Tilmeldinger/>');
@@ -53,20 +77,32 @@ class EDBBrugsen_Registration
  * Service Communicator with EDB-Brugs
  * 
  * @author Lars Olesen <lars@intraface.dk>
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- * @package EDBBrugs
  */
 class EDBBrugsen_Service
 {
     protected $soap;
     protected $response;
     
-    function __construct($soap)
+    /**
+     * Constructor
+     * 
+     * @param object $soap Soap Client
+     *
+     * @return void
+     */
+    public function __construct($soap)
     {
         $this->soap = $soap;
     }
     
-    function addNewRegistration(EDBBrugsen_Registration $request)
+    /**
+     * Add new registration to EDBBrugsen
+     * 
+     * @param object $request The XML request to use when adding a new registration
+     *
+     * @return integer (successful registrations) or throws Exception
+     */    
+    public function addNewRegistration(EDBBrugsen_Registration $request)
     {
         $request->getRequest();
         $this->response = $this->soap->NyTilmelding2(array('XmlData' => new SoapVar($request->getRequest(), XSD_STRING)));
@@ -76,7 +112,12 @@ class EDBBrugsen_Service
         return $no_of_new_registrations = str_replace('Oprettelse Ok, nye tilmeldinger: ', '', $this->response->NyTilmelding2Result);
     }
     
-    function isOk()
+    /**
+     * Checks whether the communication is OK
+     *
+     * @return boolean
+     */
+    protected function isOk()
     {
         return (strpos($this->response->NyTilmelding2Result, 'Oprettelse Ok, nye tilmeldinger') !== false);
     }
