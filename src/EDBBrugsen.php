@@ -4,23 +4,23 @@
  *
  * PHP Version 5
  *
+ * @category EDBBrugsen
  * @package  EDBBrugsen
  * @author   Lars Olesen <lars@intraface.dk>
- * @version  0.0.1
- * @link     http://edb-brugs.dk
  * @license  http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- * @category EDBBrugsen
+ * @version  Release: @package_version@
+ * @link     http://edb-brugs.dk
  */
  
 /**
  * Generate the XML
  *
+ * @category EDBBrugsen
  * @package  EDBBrugsen
  * @author   Lars Olesen <lars@intraface.dk>
- * @version  0.0.1
- * @link     http://edb-brugs.dk
- * @category EDBBrugsen
  * @license  http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
+ * @version  Release: @package_version@
+ * @link     http://edb-brugs.dk
  */
 class EDBBrugsen_Registration
 {
@@ -83,12 +83,12 @@ class EDBBrugsen_Registration
 /**
  * Service Communicator with EDB-Brugs
  * 
+ * @category EDBBrugsen
  * @package  EDBBrugsen
  * @author   Lars Olesen <lars@intraface.dk>
- * @version  0.0.1
- * @link     http://edb-brugs.dk
- * @category EDBBrugsen
  * @license  http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
+ * @version  Release: @package_version@
+ * @link     http://edb-brugs.dk
  */
 class EDBBrugsen_Service
 {
@@ -117,14 +117,18 @@ class EDBBrugsen_Service
     public function addNewRegistration(EDBBrugsen_Registration $request)
     {
         $request->getRequest();
-        $this->response = $this->soap->NyTilmelding2(array(
-          'XmlData' => new SoapVar($request->getRequest(), XSD_STRING)
-        ));
+        $this->response = $this->soap->NyTilmelding2(
+            array(
+                'XmlData' => new SoapVar($request->getRequest(), XSD_STRING)
+            )
+        );
         if (!$this->isOk()) {
             throw new Exception($this->response->NyTilmelding2Result);
         }
         return $no_of_new_registrations = str_replace(
-          'Oprettelse Ok, nye tilmeldinger: ', '', $this->response->NyTilmelding2Result
+            'Oprettelse Ok, nye tilmeldinger: ', 
+            '', 
+            $this->response->NyTilmelding2Result
         );
     }
     
@@ -135,6 +139,8 @@ class EDBBrugsen_Service
      */
     protected function isOk()
     {
-        return (strpos($this->response->NyTilmelding2Result, 'Oprettelse Ok, nye tilmeldinger') !== false);
+        $string = 'Oprettelse Ok, nye tilmeldinger';
+        $result = strpos($this->response->NyTilmelding2Result, $string);
+        return ($result !== false);
     }
 }
