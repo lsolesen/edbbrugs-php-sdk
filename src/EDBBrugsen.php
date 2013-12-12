@@ -4,16 +4,23 @@
  *
  * PHP Version 5
  *
- * @package EDBBrugs
- * @author Lars Olesen <lars@intraface.dk>
- * @link http://edb-brugs.dk
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
+ * @package  EDBBrugsen
+ * @author   Lars Olesen <lars@intraface.dk>
+ * @version  0.0.1
+ * @link     http://edb-brugs.dk
+ * @license  http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
+ * @category EDBBrugsen
  */
  
 /**
  * Generate the XML
  *
- * @author Lars Olesen <lars@intraface.dk>
+ * @package  EDBBrugsen
+ * @author   Lars Olesen <lars@intraface.dk>
+ * @version  0.0.1
+ * @link     http://edb-brugs.dk
+ * @category EDBBrugsen
+ * @license  http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  */
 class EDBBrugsen_Registration
 {
@@ -25,9 +32,9 @@ class EDBBrugsen_Registration
     /**
      * Constructor
      * 
-     * @param string $username
-     * @param string $password
-     * @param string $school_code
+     * @param string $username    Username provided by EDBBrugs
+     * @param string $password    Password provided by EDBBrugs
+     * @param string $school_code School code provided by EDBBrugs
      *
      * @return void
      */
@@ -76,7 +83,12 @@ class EDBBrugsen_Registration
 /**
  * Service Communicator with EDB-Brugs
  * 
- * @author Lars Olesen <lars@intraface.dk>
+ * @package  EDBBrugsen
+ * @author   Lars Olesen <lars@intraface.dk>
+ * @version  0.0.1
+ * @link     http://edb-brugs.dk
+ * @category EDBBrugsen
+ * @license  http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
  */
 class EDBBrugsen_Service
 {
@@ -105,11 +117,15 @@ class EDBBrugsen_Service
     public function addNewRegistration(EDBBrugsen_Registration $request)
     {
         $request->getRequest();
-        $this->response = $this->soap->NyTilmelding2(array('XmlData' => new SoapVar($request->getRequest(), XSD_STRING)));
+        $this->response = $this->soap->NyTilmelding2(array(
+          'XmlData' => new SoapVar($request->getRequest(), XSD_STRING)
+        ));
         if (!$this->isOk()) {
             throw new Exception($this->response->NyTilmelding2Result);
         }
-        return $no_of_new_registrations = str_replace('Oprettelse Ok, nye tilmeldinger: ', '', $this->response->NyTilmelding2Result);
+        return $no_of_new_registrations = str_replace(
+          'Oprettelse Ok, nye tilmeldinger: ', '', $this->response->NyTilmelding2Result
+        );
     }
     
     /**
