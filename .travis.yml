@@ -17,7 +17,7 @@ before_script:
 
 script: 
   - phpunit -c tests/phpunit.behat.xml --exclude-group=IntegrationTest --coverage-clover build/logs/clover.xml ./tests
-  - phpcs --standard=PSR2 src
+  - ./vendor/bin/phpcs --standard=PSR2 src
 
 after_script:
   - php vendor/bin/coveralls -v
