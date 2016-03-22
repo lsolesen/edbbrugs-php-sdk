@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         stopOnFailure="false"
+         bootstrap="vendor/autoload.php"
+        >
+    <testsuites>
+        <testsuite name="EDBBrugsen API Testing Suite">
+            <directory>./tests/</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./src/</directory>
+        </whitelist>
+    </filter>
+    <php>
+        <const name="USERNAME" value=""/>
+        <const name="PASSWORD" value=""/>
+        <const name="SKOLEKODE" value=""/>
+        <const name="WSDL" value=""/>
+    </php>
+</phpunit>
