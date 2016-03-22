@@ -1,22 +1,23 @@
 language: php
+sudo: false
 
 php:
-  - 5.3
-  - 5.4
+  - 5.5
+  - 5.6
+  - 7.0
+  - hhvm
+  - nightly
 
 install:
-  - pear channel-discover pear.phpunit.de
-  - pear install PHP_CodeSniffer
-  - phpenv rehash
-  - curl -s http://getcomposer.org/installer | php
-  - php composer.phar update --no-interaction --dev
+  - composer self-update
+  - composer install --no-interaction
 
 before_script:
   - mkdir -p build/logs
 
 script: 
   - phpunit -c tests/phpunit.behat.xml --exclude-group=IntegrationTest --coverage-clover build/logs/clover.xml ./tests
-  - phpcs src
+  - phpcs --standard=PSR2 src
 
 after_script:
   - php vendor/bin/coveralls -v
