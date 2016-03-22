@@ -15,8 +15,8 @@ install:
 before_script:
   - mkdir -p build/logs
 
-script: 
-  - phpunit -c tests/phpunit.behat.xml --exclude-group=IntegrationTest --coverage-clover build/logs/clover.xml ./tests
+script:
+  - phpunit --exclude-group=IntegrationTest --coverage-clover build/logs/clover.xml ./tests
   - ./vendor/bin/phpcs --standard=PSR2 src
 
 after_script:

@@ -1,18 +1,21 @@
 <?php
-require_once dirname(__FILE__) . '/../src/EDBBrugsen.php';
+namespace EDBBrugsen\Test;
 
-class EDBBrugsenTest extends PHPUnit_Framework_TestCase 
+use EDBBrugsen\Registration;
+use EDBBrugsen\Service;
+
+class EDBBrugsenTest extends \PHPUnit_Framework_TestCase
 {
     protected $brugsen;
     protected $username = 'brugernavn';
     protected $password = 'adgangskode';
     protected $school_code = '999999';
-    
+
     function setUp()
     {
-        $this->brugsen = new EDBBrugsen_Registration($this->username, $this->password, $this->school_code);
+        $this->brugsen = new Registration($this->username, $this->password, $this->school_code);
     }
-    
+
     function tearDown()
     {
         unset($this->brugsen);
@@ -22,7 +25,7 @@ class EDBBrugsenTest extends PHPUnit_Framework_TestCase
     {
         $this->assertTrue(is_object($this->brugsen));
     }
-    
+
     function testGetRequest()
     {
         $expected = '<?xml version="1.0"?>
@@ -30,7 +33,7 @@ class EDBBrugsenTest extends PHPUnit_Framework_TestCase
 ';
         $this->assertEquals($expected, $this->brugsen->getRequest());
     }
-    
+
     function testGetRequestWithRegistrations()
     {
         $expected = '<?xml version="1.0"?>
@@ -50,4 +53,3 @@ class EDBBrugsenTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $this->brugsen->getRequest());
     }
 }
-

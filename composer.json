@@ -1,4 +1,12 @@
 {
+  "autoload": {
+    "psr-4": {
+      "EDBBrugsen\\": "src/"
+    }
+  },
+  "require": {
+    "ext-soap": "*"
+  },
   "require-dev": {
     "phpunit/phpunit": "4.*",
     "squizlabs/php_codesniffer": "2.*",
