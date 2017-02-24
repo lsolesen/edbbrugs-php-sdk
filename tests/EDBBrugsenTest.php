@@ -29,7 +29,7 @@ class EDBBrugsenTest extends \PHPUnit_Framework_TestCase
     function testGetRequest()
     {
         $expected = '<?xml version="1.0"?>
-<Tilmeldinger><User><Username>' . $this->username . '</Username><Skolekode>' . $this->school_code . '</Skolekode><Passw>' . $this->password . '</Passw></User></Tilmeldinger>
+<Tilmeldinger><User><Username>' . $this->username . '</Username><Passw>' . $this->password . '</Passw><Skolekode>' . $this->school_code . '</Skolekode></User></Tilmeldinger>
 ';
         $this->assertEquals($expected, $this->brugsen->getRequest());
     }
@@ -37,7 +37,7 @@ class EDBBrugsenTest extends \PHPUnit_Framework_TestCase
     function testGetRequestWithRegistrations()
     {
         $expected = '<?xml version="1.0"?>
-<Tilmeldinger><User><Username>' . $this->username . '</Username><Skolekode>' . $this->school_code . '</Skolekode><Passw>' . $this->password . '</Passw></User><Tilmelding><Elev.Fornavn>Svend Aage</Elev.Fornavn><Elev.Efternavn>Thomsen</Elev.Efternavn></Tilmelding><Tilmelding><Elev.Fornavn>Elev</Elev.Fornavn><Elev.Efternavn>H&#xF8;jskole</Elev.Efternavn></Tilmelding></Tilmeldinger>
+<Tilmeldinger><User><Username>' . $this->username . '</Username><Passw>' . $this->password . '</Passw><Skolekode>' . $this->school_code . '</Skolekode></User><Tilmelding><Elev.Fornavn>Svend Aage</Elev.Fornavn><Elev.Efternavn>Thomsen</Elev.Efternavn></Tilmelding><Tilmelding><Elev.Fornavn>Elev</Elev.Fornavn><Elev.Efternavn>H&#xF8;jskole</Elev.Efternavn></Tilmelding></Tilmeldinger>
 ';
         $registrations[] = array(
             'Elev.Fornavn'   => 'Svend Aage',

@@ -21,7 +21,7 @@ before_script:
   - mkdir -p build/logs
 
 script:
-  - ./vendor/bin/phpunit --exclude-group=IntegrationTest --coverage-clover build/logs/clover.xml ./tests
+  - ./vendor/bin/phpunit --exclude-group=IntegrationTest --configuration phpunit.dist.xml --coverage-clover build/logs/clover.xml ./tests
   - ./vendor/bin/phpcs --standard=PSR2 src
 
 after_script:
