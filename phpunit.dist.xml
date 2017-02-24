@@ -10,7 +10,7 @@
          bootstrap="vendor/autoload.php"
         >
     <testsuites>
-        <testsuite name="EDBBrugsen API Testing Suite">
+        <testsuite name="EDB-Brugs API Testing Suite">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>

@@ -1,28 +1,26 @@
 <?php
 /**
- * SDK to communicate with EDBBrugsen
+ * SDK to communicate with EDBBrugs
  *
  * PHP Version 5
  *
- * @category EDBBrugsen
- * @package  EDBBrugsen
+ * @category EDBBrugs
+ * @package  EDBBrugs
  * @author   Lars Olesen <lars@intraface.dk>
- * @license  http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- * @version  Release: @package_version@
- * @link     http://edb-brugs.dk
+ * @license  MIT Open Source License https://opensource.org/licenses/MIT
+ * @version  GIT: <git_id>
  */
 
-namespace EDBBrugsen;
+namespace EDBBrugs;
 
 /**
  * Generate the XML
  *
- * @category EDBBrugsen
- * @package  EDBBrugsen
+ * @category EDBBrugs
+ * @package  EDBBrugs
  * @author   Lars Olesen <lars@intraface.dk>
- * @license  http://www.gnu.org/licenses/gpl.html GNU General Public License (GPL)
- * @version  Release: @package_version@
- * @link     http://edb-brugs.dk
+ * @license  MIT Open Source License https://opensource.org/licenses/MIT
+ * @version  GIT: <git_id>
  */
 class Registration
 {

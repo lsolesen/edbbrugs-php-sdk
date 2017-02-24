@@ -1,29 +1,29 @@
 <?php
-namespace EDBBrugsen\Test;
+namespace EDBBrugs\Test;
 
-use EDBBrugsen\Registration;
-use EDBBrugsen\Service;
+use EDBBrugs\Registration;
+use EDBBrugs\Service;
 
-class EDBBrugsenTest extends \PHPUnit_Framework_TestCase
+class EDBBrugsTest extends \PHPUnit_Framework_TestCase
 {
-    protected $brugsen;
+    protected $brugs;
     protected $username = 'brugernavn';
     protected $password = 'adgangskode';
     protected $school_code = '999999';
 
     function setUp()
     {
-        $this->brugsen = new Registration($this->username, $this->password, $this->school_code);
+        $this->brugs = new Registration($this->username, $this->password, $this->school_code);
     }
 
     function tearDown()
     {
-        unset($this->brugsen);
+        unset($this->brugs);
     }
 
     function testConstructor()
     {
-        $this->assertTrue(is_object($this->brugsen));
+        $this->assertTrue(is_object($this->brugs));
     }
 
     function testGetRequest()
@@ -31,7 +31,7 @@ class EDBBrugsenTest extends \PHPUnit_Framework_TestCase
         $expected = '<?xml version="1.0"?>
 <Tilmeldinger><User><Username>' . $this->username . '</Username><Passw>' . $this->password . '</Passw><Skolekode>' . $this->school_code . '</Skolekode></User></Tilmeldinger>
 ';
-        $this->assertEquals($expected, $this->brugsen->getRequest());
+        $this->assertEquals($expected, $this->brugs->getRequest());
     }
 
     function testGetRequestWithRegistrations()
@@ -48,8 +48,8 @@ class EDBBrugsenTest extends \PHPUnit_Framework_TestCase
             'Elev.Efternavn' => 'Højskole',
         );
         foreach ($registrations as $registration) {
-            $this->brugsen->addRegistration($registration);
+            $this->brugs->addRegistration($registration);
         }
-        $this->assertEquals($expected, $this->brugsen->getRequest());
+        $this->assertEquals($expected, $this->brugs->getRequest());
     }
 }
