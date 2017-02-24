@@ -67,8 +67,8 @@ class Registration
         $xml = new \SimpleXMLElement('<Tilmeldinger/>');
         $user = $xml->addChild('User');
         $user->addChild('Username', $this->username);
-        $user->addChild('Skolekode', $this->school_code);
         $user->addChild('Passw', $this->password);
+        $user->addChild('Skolekode', $this->school_code);
         foreach ($this->registrations as $r) {
             $registration = $xml->addChild('Tilmelding');
             foreach ($r as $k => $v) {
