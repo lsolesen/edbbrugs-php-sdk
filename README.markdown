@@ -1,7 +1,7 @@
-PHP SDK for EDB-Brugsen
+PHP SDK for EDB-Brugs
 --
 
-[![Build Status](https://travis-ci.org/vih/edbbrugsen-sdk.png?branch=master)](https://travis-ci.org/vih/edbbrugsen-sdk)
+[![Build Status](https://travis-ci.org/vih/edbbrugs-php-sdk.png?branch=master)](https://travis-ci.org/vih/edbbrugs-php-sdk)
 
 PHP 5 SDK to communicate with [De frie skolers EDB-BRUGS](http://edb-brugs.dk).
 

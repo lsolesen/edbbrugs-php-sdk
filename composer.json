@@ -1,11 +1,11 @@
 {
-  "name": "lsolesen/edbbrugsen-sdk",
+  "name": "lsolesen/edbbrugs-php-sdk",
   "type": "library",
   "description": "PHP-SDK for integrating with EDB-BRUGS which is a platform used by the free schools in Denmark for managing students.",
   "keywords": [
     "webservice"
   ],
-  "homepage": "http://github.com/vih/edbbrugsen-sdk",
+  "homepage": "http://github.com/vih/edbbrugs-php-sdk",
   "authors": [
         {
             "name": "Lars Olesen",
@@ -20,7 +20,7 @@
     },
   "autoload": {
     "psr-4": {
-      "EDBBrugsen\\": "src/"
+      "EDBBrugs\\": "src/"
     }
   },
   "require": {

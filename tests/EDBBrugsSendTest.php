@@ -1,8 +1,8 @@
 <?php
-namespace EDBBrugsen\Test;
+namespace EDBBrugs\Test;
 
-use EDBBrugsen\Registration;
-use EDBBrugsen\Service;
+use EDBBrugs\Registration;
+use EDBBrugs\Service;
 
 // Hide Soap implementation in another class
 // Soap will dependency injected
@@ -17,15 +17,15 @@ class MockSoapClient
     }
 }
 
-class EDBBrugsenSendTest extends \PHPUnit_Framework_TestCase
+class EDBBrugsSendTest extends \PHPUnit_Framework_TestCase
 {
     protected $sender;
-    protected $brugsen;
+    protected $brugs;
     protected $registrations;
 
     function setUp()
     {
-        $this->brugsen = new Registration('brugernavn', 'adgangskode', '999999');
+        $this->brugs = new Registration('brugernavn', 'adgangskode', '999999');
         $this->registrations = array(
             array(
                 'Kartotek' => 'T3',
@@ -91,7 +91,7 @@ class EDBBrugsenSendTest extends \PHPUnit_Framework_TestCase
             ),
         );
         foreach ($this->registrations as $registration) {
-            $this->brugsen->addRegistration($registration);
+            $this->brugs->addRegistration($registration);
         }
     }
 
@@ -99,7 +99,7 @@ class EDBBrugsenSendTest extends \PHPUnit_Framework_TestCase
     {
         $soap = new MockSoapClient(WSDL);
         $sender = new Service($soap);
-        $this->assertEquals(count($this->registrations), $sender->addNewRegistration($this->brugsen));
+        $this->assertEquals(count($this->registrations), $sender->addNewRegistration($this->brugs));
     }
 
     /**
@@ -111,12 +111,12 @@ class EDBBrugsenSendTest extends \PHPUnit_Framework_TestCase
     {
         $soap = new \SoapClient(WSDL);
         $sender = new Service($soap);
-        $brugsen = new Registration('BRUGERNAVN', 'PASSWORD', 'SKOLEKODE');
+        $brugs = new Registration('BRUGERNAVN', 'PASSWORD', 'SKOLEKODE');
         foreach ($this->registrations as $registration) {
-            $brugsen->addRegistration($registration);
+            $brugs->addRegistration($registration);
         }
 
-        $this->assertEquals(count($this->registrations), $sender->addNewRegistration($brugsen));
+        $this->assertEquals(count($this->registrations), $sender->addNewRegistration($brugs));
     }
 
     /**
@@ -126,10 +126,10 @@ class EDBBrugsenSendTest extends \PHPUnit_Framework_TestCase
     {
         $soap = new \SoapClient(WSDL);
         $sender = new Service($soap);
-        $brugsen = new Registration(USERNAME, PASSWORD, SKOLEKODE);
+        $brugs = new Registration(USERNAME, PASSWORD, SKOLEKODE);
         foreach ($this->registrations as $registration) {
-            $brugsen->addRegistration($registration);
+            $brugs->addRegistration($registration);
         }
-        $this->assertEquals(count($this->registrations), $sender->addNewRegistration($brugsen));
+        $this->assertEquals(count($this->registrations), $sender->addNewRegistration($brugs));
     }
 }
