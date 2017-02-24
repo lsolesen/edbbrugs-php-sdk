@@ -31,8 +31,6 @@ class Service
      * Constructor
      *
      * @param object $soap Soap Client
-     *
-     * @return void
      */
     public function __construct($soap)
     {
@@ -44,7 +42,7 @@ class Service
      *
      * @param object $request The XML request to use when adding a new registration
      *
-     * @return integer (successful registrations) or throws Exception
+     * @return mixed (number of successful registrations) or throws Exception
      */
     public function addNewRegistration(Registration $request)
     {
@@ -57,7 +55,7 @@ class Service
         if (!$this->isOk()) {
             throw new \Exception($this->response->NyTilmelding2Result);
         }
-        return $no_of_new_registrations = str_replace(
+        return str_replace(
             'Oprettelse Ok, nye tilmeldinger: ',
             '',
             $this->response->NyTilmelding2Result
