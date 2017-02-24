@@ -1,7 +1,7 @@
 {
-  "name": "lsolesen/pel",
+  "name": "lsolesen/edbbrugsen-sdk",
   "type": "library",
-  "description": "PHP Exif Library. A library for reading and writing Exif headers in JPEG and TIFF images using PHP.",
+  "description": "PHP-SDK for integrating with EDB-BRUGS which is a platform used by the free schools in Denmark for managing students.",
   "keywords": [
     "webservice"
   ],
