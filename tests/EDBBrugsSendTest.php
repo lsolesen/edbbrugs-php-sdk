@@ -23,7 +23,7 @@ class EDBBrugsSendTest extends \PHPUnit_Framework_TestCase
     protected $brugs;
     protected $registrations;
 
-    function setUp()
+    public function setUp()
     {
         $this->brugs = new Registration('brugernavn', 'adgangskode', '999999');
         $this->registrations = array(
@@ -95,7 +95,7 @@ class EDBBrugsSendTest extends \PHPUnit_Framework_TestCase
         }
     }
 
-    function testSoapAddNewRegistrationInteractingWithMockedOutWebservice()
+    public function testSoapAddNewRegistrationInteractingWithMockedOutWebservice()
     {
         $soap = new MockSoapClient(WSDL);
         $sender = new Service($soap);
@@ -107,7 +107,7 @@ class EDBBrugsSendTest extends \PHPUnit_Framework_TestCase
      * @expectedException Exception
      * @expectedExceptionMessage Brugernavn / adgangskode er ikke korrekt
      */
-    function testSoapAddNewRegistrationInteractingWithOnlineWebserviceWithWrongCredentials()
+    public function testSoapAddNewRegistrationInteractingWithOnlineWebserviceWithWrongCredentials()
     {
         $soap = new \SoapClient(WSDL);
         $sender = new Service($soap);
@@ -122,7 +122,7 @@ class EDBBrugsSendTest extends \PHPUnit_Framework_TestCase
     /**
      * @group IntegrationTest
      */
-    function testSoapAddNewRegistrationInteractingWithOnlineWebservice()
+    public function testSoapAddNewRegistrationInteractingWithOnlineWebservice()
     {
         $soap = new \SoapClient(WSDL);
         $sender = new Service($soap);

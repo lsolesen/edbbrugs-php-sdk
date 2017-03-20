@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!--suppress XmlUnboundNsPrefix -->
+<ruleset name="EDBBrugs Coding standards">
+  <description>Coding standards is based on the PSR-2 coding standard.</description>
+  <rule ref="PSR2"/>
+  <file>./src</file>
+</ruleset>

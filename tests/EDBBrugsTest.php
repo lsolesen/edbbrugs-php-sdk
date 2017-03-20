@@ -11,22 +11,22 @@ class EDBBrugsTest extends \PHPUnit_Framework_TestCase
     protected $password = 'adgangskode';
     protected $school_code = '999999';
 
-    function setUp()
+    public function setUp()
     {
         $this->brugs = new Registration($this->username, $this->password, $this->school_code);
     }
 
-    function tearDown()
+    public function tearDown()
     {
         unset($this->brugs);
     }
 
-    function testConstructor()
+    public function testConstructor()
     {
         $this->assertTrue(is_object($this->brugs));
     }
 
-    function testGetRequest()
+    public function testGetRequest()
     {
         $expected = '<?xml version="1.0"?>
 <Tilmeldinger><User><Username>' . $this->username . '</Username><Passw>' . $this->password . '</Passw><Skolekode>' . $this->school_code . '</Skolekode></User></Tilmeldinger>
@@ -34,7 +34,7 @@ class EDBBrugsTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($expected, $this->brugs->getRequest());
     }
 
-    function testGetRequestWithRegistrations()
+    public function testGetRequestWithRegistrations()
     {
         $expected = '<?xml version="1.0"?>
 <Tilmeldinger><User><Username>' . $this->username . '</Username><Passw>' . $this->password . '</Passw><Skolekode>' . $this->school_code . '</Skolekode></User><Tilmelding><Elev.Fornavn>Svend Aage</Elev.Fornavn><Elev.Efternavn>Thomsen</Elev.Efternavn></Tilmelding><Tilmelding><Elev.Fornavn>Elev</Elev.Fornavn><Elev.Efternavn>H&#xF8;jskole</Elev.Efternavn></Tilmelding></Tilmeldinger>
