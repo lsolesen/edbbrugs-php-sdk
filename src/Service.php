@@ -44,12 +44,11 @@ class Service
      *
      * @return mixed (number of successful registrations) or throws Exception
      */
-    public function addNewRegistration(Registration $request)
+    public function addNewRegistration(Request $request)
     {
-        $request->getRequest();
         $this->response = $this->soap->NyTilmelding2(
             array(
-                'XmlData' => new \SoapVar($request->getRequest(), XSD_STRING)
+                'XmlData' => new \SoapVar($request->getRequest()->asXml(), XSD_STRING)
             )
         );
         if (!$this->isOk()) {

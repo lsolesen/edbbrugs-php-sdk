@@ -7,23 +7,21 @@
   ],
   "homepage": "http://github.com/vih/edbbrugs-php-sdk",
   "authors": [
-        {
-            "name": "Lars Olesen",
-            "email": "lars@intraface.dk",
-            "homepage": "http://intraface.dk",
-            "role": "Developer"
-        }
-    ],
-    "license": "MIT",
-    "require": {
-        "php": ">=5.5.0"
-    },
+    {
+      "name": "Lars Olesen",
+      "email": "lars@intraface.dk",
+      "homepage": "http://intraface.dk",
+      "role": "Developer"
+    }
+  ],
+  "license": "MIT",
   "autoload": {
     "psr-4": {
       "EDBBrugs\\": "src/"
     }
   },
   "require": {
+    "php": ">=5.5.0",
     "ext-soap": "*"
   },
   "require-dev": {

@@ -1,14 +1,20 @@
 <?php
 namespace EDBBrugs\Test;
 
-use EDBBrugs\Registration;
+use EDBBrugs\RegistrationRepository;
+use EDBBrugs\Request;
 use EDBBrugs\Service;
 
 // Hide Soap implementation in another class
 // Soap will dependency injected
 
-class MockSoapClient
+class MockSoapClient extends \SoapClient
 {
+    public function __construct()
+    {
+        // Left empty on purpose.
+    }
+
     public function NyTilmelding2()
     {
         $class = new \StdClass;
@@ -20,12 +26,13 @@ class MockSoapClient
 class EDBBrugsSendTest extends \PHPUnit_Framework_TestCase
 {
     protected $sender;
-    protected $brugs;
+    protected $request;
     protected $registrations;
 
     public function setUp()
     {
-        $this->brugs = new Registration('brugernavn', 'adgangskode', '999999');
+        $this->request = new Request('brugernavn', 'adgangskode', '999999');
+        $this->registration = new RegistrationRepository($this->request);
         $this->registrations = array(
             array(
                 'Kartotek' => 'T3',
@@ -91,7 +98,7 @@ class EDBBrugsSendTest extends \PHPUnit_Framework_TestCase
             ),
         );
         foreach ($this->registrations as $registration) {
-            $this->brugs->addRegistration($registration);
+            $this->registration->addRegistration($registration);
         }
     }
 
@@ -99,7 +106,7 @@ class EDBBrugsSendTest extends \PHPUnit_Framework_TestCase
     {
         $soap = new MockSoapClient(WSDL);
         $sender = new Service($soap);
-        $this->assertEquals(count($this->registrations), $sender->addNewRegistration($this->brugs));
+        $this->assertEquals(count($this->registrations), $sender->addNewRegistration($this->request));
     }
 
     /**
@@ -111,9 +118,10 @@ class EDBBrugsSendTest extends \PHPUnit_Framework_TestCase
     {
         $soap = new \SoapClient(WSDL);
         $sender = new Service($soap);
-        $brugs = new Registration('BRUGERNAVN', 'PASSWORD', 'SKOLEKODE');
-        foreach ($this->registrations as $registration) {
-            $brugs->addRegistration($registration);
+        $brugs = new Request('BRUGERNAVN', 'PASSWORD', 'SKOLEKODE');
+        $registration = new RegistrationRepository($brugs);
+        foreach ($this->registrations as $reg) {
+            $registration->addRegistration($reg);
         }
 
         $this->assertEquals(count($this->registrations), $sender->addNewRegistration($brugs));
@@ -126,9 +134,10 @@ class EDBBrugsSendTest extends \PHPUnit_Framework_TestCase
     {
         $soap = new \SoapClient(WSDL);
         $sender = new Service($soap);
-        $brugs = new Registration(USERNAME, PASSWORD, SKOLEKODE);
-        foreach ($this->registrations as $registration) {
-            $brugs->addRegistration($registration);
+        $brugs = new Request(USERNAME, PASSWORD, SKOLEKODE);
+        $registration = new RegistrationRepository($brugs);
+        foreach ($this->registrations as $reg) {
+            $registration->addRegistration($reg);
         }
         $this->assertEquals(count($this->registrations), $sender->addNewRegistration($brugs));
     }

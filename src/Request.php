@@ -22,12 +22,12 @@ namespace EDBBrugs;
  * @license  MIT Open Source License https://opensource.org/licenses/MIT
  * @version  GIT: <git_id>
  */
-class Registration
+class Request
 {
     protected $username;
     protected $password;
     protected $school_code;
-    protected $registrations = array();
+    protected $xml;
 
     /**
      * Constructor
@@ -41,18 +41,22 @@ class Registration
         $this->username    = $username;
         $this->password    = $password;
         $this->school_code = $school_code;
+
+        $this->populateRequest();
     }
 
     /**
-     * Adds registration
-     *
-     * @param array $registrations Array with registrations
+     * Populate the XML request
      *
      * @return void
      */
-    public function addRegistration(array $registrations)
+    protected function populateRequest()
     {
-        $this->registrations[] = $registrations;
+        $this->xml = new \SimpleXMLElement('<Tilmeldinger/>');
+        $user = $this->xml->addChild('User');
+        $user->addChild('Username', $this->username);
+        $user->addChild('Passw', $this->password);
+        $user->addChild('Skolekode', $this->school_code);
     }
 
     /**
@@ -62,18 +66,6 @@ class Registration
      */
     public function getRequest()
     {
-        $xml = new \SimpleXMLElement('<Tilmeldinger/>');
-        $user = $xml->addChild('User');
-        $user->addChild('Username', $this->username);
-        $user->addChild('Passw', $this->password);
-        $user->addChild('Skolekode', $this->school_code);
-        foreach ($this->registrations as $r) {
-            $registration = $xml->addChild('Tilmelding');
-            foreach ($r as $k => $v) {
-                $registration->addChild($k, $v);
-            }
-        }
-
-        return $xml->asXml();
+        return $this->xml;
     }
 }
