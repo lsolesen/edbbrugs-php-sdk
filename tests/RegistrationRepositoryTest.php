@@ -2,37 +2,49 @@
 namespace EDBBrugs\Test;
 
 use EDBBrugs\RegistrationRepository;
-use EDBBrugs\Request;
-use EDBBrugs\Service;
+use EDBBrugs\ClientInterface;
+use EDBBrugs\Credentials;
+use EDBBrugs\Client;
+use EDBBrugs\Response;
 
-// Hide Soap implementation in another class
-// Soap will dependency injected
-
-class MockSoapClient extends \SoapClient
+class MockClient implements ClientInterface
 {
-    public function __construct()
-    {
-        // Left empty on purpose.
-    }
-
-    public function NyTilmelding2()
+    public function createNewRegistrations(array $registrations)
     {
         $class = new \StdClass;
         $class->NyTilmelding2Result = 'Oprettelse Ok, nye tilmeldinger: 2';
-        return $class;
+        return new Response('NyTilmelding2', $class);
+    }
+
+    public function getNewRegistrations()
+    {
+        $class = new \StdClass;
+        $class->NyTilmelding2Result = 'Oprettelse Ok, nye tilmeldinger: 2';
+        return new Response('HentNyeTilmeldingerV2', $class);
+    }
+
+    public function deleteRegistrations($weblist)
+    {
+        $class = new \StdClass;
+        $class->NyTilmelding2Result = 'Oprettelse Ok, nye tilmeldinger: 2';
+        return new Response('SletTilmeldingerV2', $class);
+    }
+
+    public function getHandledRegistrations()
+    {
+        $class = new \StdClass;
+        $class->NyTilmelding2Result = 'Oprettelse Ok, nye tilmeldinger: 2';
+        return new Response('HentNyeTilmeldingerV2', $class);
     }
 }
 
-class EDBBrugsSendTest extends \PHPUnit_Framework_TestCase
+class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
 {
-    protected $sender;
-    protected $request;
+    protected $soap;
     protected $registrations;
 
     public function setUp()
     {
-        $this->request = new Request('brugernavn', 'adgangskode', '999999');
-        $this->registration = new RegistrationRepository($this->request);
         $this->registrations = array(
             array(
                 'Kartotek' => 'T3',
@@ -97,16 +109,13 @@ class EDBBrugsSendTest extends \PHPUnit_Framework_TestCase
                 'Voksen.Land' => 'Danmark',
             ),
         );
-        foreach ($this->registrations as $registration) {
-            $this->registration->addRegistration($registration);
-        }
     }
 
     public function testSoapAddNewRegistrationInteractingWithMockedOutWebservice()
     {
-        $soap = new MockSoapClient(WSDL);
-        $sender = new Service($soap);
-        $this->assertEquals(count($this->registrations), $sender->addNewRegistration($this->request));
+        $client = new MockClient();
+        $repository = new RegistrationRepository($client);
+        $this->assertEquals(count($this->registrations), $repository->addRegistrations($this->registrations)->getCount());
     }
 
     /**
@@ -116,15 +125,12 @@ class EDBBrugsSendTest extends \PHPUnit_Framework_TestCase
      */
     public function testSoapAddNewRegistrationInteractingWithOnlineWebserviceWithWrongCredentials()
     {
-        $soap = new \SoapClient(WSDL);
-        $sender = new Service($soap);
-        $brugs = new Request('BRUGERNAVN', 'PASSWORD', 'SKOLEKODE');
-        $registration = new RegistrationRepository($brugs);
-        foreach ($this->registrations as $reg) {
-            $registration->addRegistration($reg);
-        }
+        $this->soap = new \SoapClient(WSDL, array('trace' => 1));
+        $credentials = new Credentials('BRUGERNAVN', 'PASSWORD', 'SKOLEKODE');
+        $client = new Client($credentials, $this->soap);
 
-        $this->assertEquals(count($this->registrations), $sender->addNewRegistration($brugs));
+        $repository = new RegistrationRepository($client);
+        $repository->addRegistrations($this->registrations)->getBody();
     }
 
     /**
@@ -132,13 +138,51 @@ class EDBBrugsSendTest extends \PHPUnit_Framework_TestCase
      */
     public function testSoapAddNewRegistrationInteractingWithOnlineWebservice()
     {
-        $soap = new \SoapClient(WSDL);
-        $sender = new Service($soap);
-        $brugs = new Request(USERNAME, PASSWORD, SKOLEKODE);
-        $registration = new RegistrationRepository($brugs);
-        foreach ($this->registrations as $reg) {
-            $registration->addRegistration($reg);
+        $this->soap = new \SoapClient(WSDL, array('trace' => 1));
+        $credentials = new Credentials(USERNAME, PASSWORD, SKOLEKODE);
+        $client = new Client($credentials, $this->soap);
+
+        $repository = new RegistrationRepository($client);
+
+        $this->assertEquals(count($this->registrations), $repository->addRegistrations($this->registrations)->getCount());
+    }
+
+    /**
+     * @group IntegrationTest
+     */
+    public function testSoapGetNewRegistrationsInteractingWithOnlineWebservice()
+    {
+        $this->soap = new \SoapClient(WSDL, array('trace' => 1));
+        $credentials = new Credentials(USERNAME, PASSWORD, SKOLEKODE);
+        $client = new Client($credentials, $this->soap);
+
+        $repository = new RegistrationRepository($client);
+
+        try {
+            $response = $repository->getNewRegistrations()->getBody();
+        } catch (Exception $e) {
+            print $this->soap->__getLastRequest();
         }
-        $this->assertEquals(count($this->registrations), $sender->addNewRegistration($brugs));
+    }
+
+    /**
+     * @group IntegrationTest
+     * @expectedException Exception
+     * @expectedExceptionMessage Invalid systemcode
+     */
+    public function testSoapDeleteRegistrationsInteractingWithOnlineWebservice()
+    {
+        $this->soap = new \SoapClient(WSDL, array('trace' => 1));
+        $credentials = new Credentials(USERNAME, PASSWORD, SKOLEKODE);
+        $client = new Client($credentials, $this->soap);
+
+        $repository = new RegistrationRepository($client);
+
+        try {
+            $weblist_id = 11111;
+            $response = $repository->delete($weblist_id)->getBody();
+        } catch (Exception $e) {
+            print $this->soap->__getLastRequest();
+        }
     }
 }

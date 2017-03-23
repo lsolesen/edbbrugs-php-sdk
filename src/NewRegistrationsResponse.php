@@ -13,6 +13,8 @@
 
 namespace EDBBrugs;
 
+use EDBBrugs\Response;
+
 /**
  * Service Communicator with EDB-Brugs
  *
@@ -22,38 +24,22 @@ namespace EDBBrugs;
  * @license  MIT Open Source License https://opensource.org/licenses/MIT
  * @version  GIT: <git_id>
  */
-class Service
+class NewRegistrationsResponse implements ResponseInterface
 {
-    protected $soap;
     protected $response;
 
     /**
      * Constructor
      *
-     * @param object $soap Soap Client
+     * @param object $response Actual response from SOAP
      */
-    public function __construct($soap)
+    public function __construct($response)
     {
-        $this->soap = $soap;
+        $this->response = $response;
     }
 
-    /**
-     * Add new registration to EDBBrugs
-     *
-     * @param object $request The XML request to use when adding a new registration
-     *
-     * @return mixed (number of successful registrations) or throws Exception
-     */
-    public function addNewRegistration(Request $request)
+    public function getCount()
     {
-        $this->response = $this->soap->NyTilmelding2(
-            array(
-                'XmlData' => new \SoapVar($request->getRequest()->asXml(), XSD_STRING)
-            )
-        );
-        if (!$this->isOk()) {
-            throw new \Exception($this->response->NyTilmelding2Result);
-        }
         return str_replace(
             'Oprettelse Ok, nye tilmeldinger: ',
             '',
@@ -62,14 +48,28 @@ class Service
     }
 
     /**
+     * Add new registration to EDBBrugs
+     *
+     * @return mixed (number of successful registrations) or throws Exception
+     */
+    public function getBody()
+    {
+        if (!$this->isOk()) {
+            throw new \Exception($this->response->NyTilmelding2Result);
+        }
+        return $this->response->NyTilmelding2Result;
+    }
+
+    /**
      * Checks whether the communication is OK
      *
      * @return boolean
      */
-    protected function isOk()
+    public function isOk()
     {
         $string = 'Oprettelse Ok, nye tilmeldinger';
         $result = strpos($this->response->NyTilmelding2Result, $string);
         return ($result !== false);
+
     }
 }

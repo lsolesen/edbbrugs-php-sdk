@@ -29,9 +29,9 @@ class RegistrationRepository
      *
      * @param string $request  Request object
      */
-    public function __construct($request)
+    public function __construct(ClientInterface $client)
     {
-        $this->request = $request;
+        $this->client = $client;
     }
 
     /**
@@ -39,13 +39,42 @@ class RegistrationRepository
      *
      * @param array $registration Array with registration options
      *
-     * @return void
+     * @return Response
      */
-    public function addRegistration(array $registration)
+    public function addRegistrations(array $registrations)
     {
-        $reg = $this->request->getRequest()->addChild('Tilmelding');
-        foreach ($registration as $key => $value) {
-            $reg->addChild($key, $value);
-        }
+        return $this->client->createNewRegistrations($registrations);
+    }
+
+    /**
+     * Gets new registrations
+     *
+     * @return Response
+     */
+    public function getNewRegistrations()
+    {
+        return $this->client->getNewRegistrations();
+    }
+
+    /**
+     * Gets handled registrations
+     *
+     * @return Response
+     */
+    public function getHandledRegistrations()
+    {
+        return $this->client->getHandledRegistrations();
+    }
+
+    /**
+     * Deletes registrations
+     *
+     * @param string $weblist_id String with the id
+     *
+     * @return Response
+     */
+    public function delete($weblist_id)
+    {
+        return $this->client->deleteRegistrations($weblist_id);
     }
 }
