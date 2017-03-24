@@ -2,6 +2,7 @@
 namespace EDBBrugs\Test;
 
 use EDBBrugs\RegistrationRepository;
+use EDBBrugs\RegistrationsCreateResponse;
 use EDBBrugs\ClientInterface;
 use EDBBrugs\Credentials;
 use EDBBrugs\Client;
@@ -13,28 +14,28 @@ class MockClient implements ClientInterface
     {
         $class = new \StdClass;
         $class->NyTilmelding2Result = 'Oprettelse Ok, nye tilmeldinger: 2';
-        return new Response('NyTilmelding2', $class);
+        return new RegistrationsCreateResponse($class);
     }
 
     public function getNewRegistrations()
     {
         $class = new \StdClass;
-        $class->NyTilmelding2Result = 'Oprettelse Ok, nye tilmeldinger: 2';
-        return new Response('HentNyeTilmeldingerV2', $class);
+        $class->HentNyeTilmeldingerV2Result = '<dataset/>';
+        return new Response($class);
     }
 
     public function deleteRegistrations($weblist)
     {
         $class = new \StdClass;
-        $class->NyTilmelding2Result = 'Oprettelse Ok, nye tilmeldinger: 2';
-        return new Response('SletTilmeldingerV2', $class);
+        $class->SletTilmeldingerV2Result = 'Oprettelse Ok, nye tilmeldinger: 2';
+        return new Response($class);
     }
 
     public function getHandledRegistrations()
     {
         $class = new \StdClass;
-        $class->NyTilmelding2Result = 'Oprettelse Ok, nye tilmeldinger: 2';
-        return new Response('HentNyeTilmeldingerV2', $class);
+        $class->HentBehandledeTilmeldingerV2Result = '<dataset/>';
+        return new Response($class);
     }
 }
 
@@ -162,6 +163,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
             $response = $repository->getNewRegistrations()->getBody();
         } catch (Exception $e) {
             print $this->soap->__getLastRequest();
+            print $this->soap->__getLastResponse();
         }
     }
 
@@ -183,6 +185,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
             $response = $repository->delete($weblist_id)->getBody();
         } catch (Exception $e) {
             print $this->soap->__getLastRequest();
+            print $this->soap->__getLastResponse();
         }
     }
 }

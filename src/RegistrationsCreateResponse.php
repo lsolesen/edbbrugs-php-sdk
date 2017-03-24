@@ -24,7 +24,7 @@ use EDBBrugs\Response;
  * @license  MIT Open Source License https://opensource.org/licenses/MIT
  * @version  GIT: <git_id>
  */
-class NewRegistrationsResponse implements ResponseInterface
+class RegistrationsCreateResponse extends Response
 {
     protected $response;
 
@@ -36,15 +36,6 @@ class NewRegistrationsResponse implements ResponseInterface
     public function __construct($response)
     {
         $this->response = $response;
-    }
-
-    public function getCount()
-    {
-        return str_replace(
-            'Oprettelse Ok, nye tilmeldinger: ',
-            '',
-            $this->response->NyTilmelding2Result
-        );
     }
 
     /**
@@ -61,7 +52,7 @@ class NewRegistrationsResponse implements ResponseInterface
     }
 
     /**
-     * Checks whether the communication is OK
+     * Checks whether the communication is a success
      *
      * @return boolean
      */
@@ -71,5 +62,19 @@ class NewRegistrationsResponse implements ResponseInterface
         $result = strpos($this->response->NyTilmelding2Result, $string);
         return ($result !== false);
 
+    }
+
+    /**
+     * Returns how many registrations has been created
+     *
+     * @return mixed
+     */
+    public function getCount()
+    {
+        return str_replace(
+            'Oprettelse Ok, nye tilmeldinger: ',
+            '',
+            $this->response->NyTilmelding2Result
+        );
     }
 }

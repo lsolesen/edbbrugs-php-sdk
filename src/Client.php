@@ -42,6 +42,8 @@ class Client implements ClientInterface
 
     /**
      * @param array $registrations
+     *
+     * @return object RegistrationsCreateResponse
      */
     public function createNewRegistrations(array $registrations)
     {
@@ -60,28 +62,46 @@ class Client implements ClientInterface
         $params = array();
         $params['XmlData'] = new \SoapVar($xml->asXml(), XSD_STRING);
 
-        return new NewRegistrationsResponse($this->soap->NyTilmelding2($params));
-    }
-
-    public function getNewRegistrations()
-    {
-        $params = $this->credentials->getArray();
-        return new Response('HentNyeTilmeldingerV2', $this->soap->HentNyeTilmeldingerV2($params));
-    }
-
-    public function getHandledRegistrations()
-    {
-        $params = $this->credentials->getArray();
-        return new Response('HentBehandledeTilmeldingerV2', $this->soap->HentBehandledeTilmeldingerV2($params));
+        return new RegistrationsCreateResponse($this->soap->NyTilmelding2($params));
     }
 
     /**
+     * Gets new registrations
+     *
      * @param string $weblist_id
+     *
+     * @return Response
+     */
+    public function getNewRegistrations()
+    {
+        $params = $this->credentials->getArray();
+        return new Response($this->soap->HentNyeTilmeldingerV2($params));
+    }
+
+    /**
+     * Gets handled registrations
+     *
+     * @param string $weblist_id
+     *
+     * @return Response
+     */
+    public function getHandledRegistrations()
+    {
+        $params = $this->credentials->getArray();
+        return new Response($this->soap->HentBehandledeTilmeldingerV2($params));
+    }
+
+    /**
+     * Delete registrations
+     *
+     * @param string $weblist_id
+     *
+     * @return Response
      */
     public function deleteRegistrations($weblist_id)
     {
         $params = $this->credentials->getArray();
         $params['Id_WebListe'] = '72200' . '_' . 'T3';
-        return new Response('SletTilmeldingerV2', $this->soap->SletTilmeldingerV2($params));
+        return new Response($this->soap->SletTilmeldingerV2($params));
     }
 }
