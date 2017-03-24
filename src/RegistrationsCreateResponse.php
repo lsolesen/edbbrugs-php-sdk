@@ -41,7 +41,8 @@ class RegistrationsCreateResponse extends Response
     /**
      * Add new registration to EDBBrugs
      *
-     * @return mixed (number of successful registrations) or throws Exception
+     * @return mixed (number of successful registrations) or
+     * @throws \Exception
      */
     public function getBody()
     {

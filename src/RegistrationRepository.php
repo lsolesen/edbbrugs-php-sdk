@@ -27,7 +27,7 @@ class RegistrationRepository
     /**
      * Constructor
      *
-     * @param string $request  Request object
+     * @param string $client Client object
      */
     public function __construct(ClientInterface $client)
     {
@@ -37,9 +37,9 @@ class RegistrationRepository
     /**
      * Adds registration
      *
-     * @param array $registration Array with registration options
+     * @param array $registrations Array with several registrations
      *
-     * @return Response
+     * @return ResponseInterface
      */
     public function addRegistrations(array $registrations)
     {
@@ -49,7 +49,7 @@ class RegistrationRepository
     /**
      * Gets new registrations
      *
-     * @return Response
+     * @return ResponseInterface
      */
     public function getNewRegistrations()
     {
@@ -59,7 +59,7 @@ class RegistrationRepository
     /**
      * Gets handled registrations
      *
-     * @return Response
+     * @return ResponseInterface
      */
     public function getHandledRegistrations()
     {
@@ -71,7 +71,8 @@ class RegistrationRepository
      *
      * @param string $weblist_id String with the id
      *
-     * @return Response
+     * @throws Exception
+     * @return void
      */
     public function delete($weblist_id)
     {

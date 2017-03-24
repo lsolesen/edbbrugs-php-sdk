@@ -41,9 +41,11 @@ class Client implements ClientInterface
     }
 
     /**
+     * Create new registrations from array
+     *
      * @param array $registrations
      *
-     * @return object RegistrationsCreateResponse
+     * @return RegistrationsCreateResponse
      */
     public function createNewRegistrations(array $registrations)
     {
@@ -68,8 +70,6 @@ class Client implements ClientInterface
     /**
      * Gets new registrations
      *
-     * @param string $weblist_id
-     *
      * @return Response
      */
     public function getNewRegistrations()
@@ -80,8 +80,6 @@ class Client implements ClientInterface
 
     /**
      * Gets handled registrations
-     *
-     * @param string $weblist_id
      *
      * @return Response
      */
@@ -96,7 +94,8 @@ class Client implements ClientInterface
      *
      * @param string $weblist_id
      *
-     * @return Response
+     * @throws \Exception
+     * @return void
      */
     public function deleteRegistrations($weblist_id)
     {

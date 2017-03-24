@@ -31,7 +31,7 @@ class Response implements ResponseInterface
     /**
      * Constructor
      *
-     * @param object $response     Actual response from SOAP
+     * @param object $response Actual response from SOAP
      */
     public function __construct($response)
     {
@@ -41,7 +41,8 @@ class Response implements ResponseInterface
     /**
      * Gets the body from the response
      *
-     * @return mixed Soap result or throws Exception
+     * @return mixed SOAP Response
+     * @throws \Exception
      */
     public function getBody()
     {
