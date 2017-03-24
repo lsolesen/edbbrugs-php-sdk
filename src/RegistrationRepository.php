@@ -27,7 +27,7 @@ class RegistrationRepository
     /**
      * Constructor
      *
-     * @param string $client Client object
+     * @param ClientInterface $client Client object
      */
     public function __construct(ClientInterface $client)
     {
