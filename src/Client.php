@@ -92,12 +92,10 @@ class Client implements ClientInterface
     /**
      * Delete registrations
      *
-     * @param string $weblist_id
-     *
      * @throws \Exception
      * @return void
      */
-    public function deleteRegistrations($weblist_id)
+    public function deleteRegistrations()
     {
         throw new \Exception('It is not possible to delete registrations using the SOAP webservice');
     }

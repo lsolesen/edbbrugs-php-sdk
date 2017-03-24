@@ -67,14 +67,12 @@ class RegistrationRepository
     }
 
     /**
-     * Deletes registrations
-     *
-     * @param string $weblist_id String with the id
+     * Deletes registration
      *
      * @throws Exception
      * @return void
      */
-    public function delete($weblist_id)
+    public function delete()
     {
         throw new \Exception('It is not possible to delete registrations using the SOAP webservice');
     }
