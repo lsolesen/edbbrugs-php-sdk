@@ -20,7 +20,7 @@ class MockClient implements ClientInterface
     public function getNewRegistrations()
     {
         $class = new \StdClass;
-        $class->HentNyeTilmeldingerV2Result = '<dataset/>';
+        $class->HentNyeTilmeldingerV2Result = '<NewDataSet />';
         return new Response($class);
     }
 
@@ -34,7 +34,7 @@ class MockClient implements ClientInterface
     public function getHandledRegistrations()
     {
         $class = new \StdClass;
-        $class->HentBehandledeTilmeldingerV2Result = '<dataset/>';
+        $class->HentBehandledeTilmeldingerV2Result = '<NewDataSet />';
         return new Response($class);
     }
 }
