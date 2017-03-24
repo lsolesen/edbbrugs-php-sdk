@@ -24,13 +24,6 @@ class MockClient implements ClientInterface
         return new Response($class);
     }
 
-    public function deleteRegistrations($weblist)
-    {
-        $class = new \StdClass;
-        $class->SletTilmeldingerV2Result = 'Oprettelse Ok, nye tilmeldinger: 2';
-        return new Response($class);
-    }
-
     public function getHandledRegistrations()
     {
         $class = new \StdClass;
@@ -168,9 +161,12 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * It is not possible to delete using the webservice.
+     * Just testing whether we get expected response.
+     *
      * @group IntegrationTest
      * @expectedException Exception
-     * @expectedExceptionMessage Invalid systemcode
+     * @expectedExceptionMessage It is not possible to delete registrations using the SOAP webservice
      */
     public function testSoapDeleteRegistrationsInteractingWithOnlineWebservice()
     {
@@ -180,12 +176,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
 
         $repository = new RegistrationRepository($client);
 
-        try {
-            $weblist_id = 11111;
-            $response = $repository->delete($weblist_id)->getBody();
-        } catch (Exception $e) {
-            print $this->soap->__getLastRequest();
-            print $this->soap->__getLastResponse();
-        }
+        $weblist_id = 11111;
+        $response = $repository->delete($weblist_id)->getBody();
     }
 }

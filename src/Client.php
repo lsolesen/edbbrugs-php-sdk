@@ -100,8 +100,6 @@ class Client implements ClientInterface
      */
     public function deleteRegistrations($weblist_id)
     {
-        $params = $this->credentials->getArray();
-        $params['Id_WebListe'] = '72200' . '_' . 'T3';
-        return new Response($this->soap->SletTilmeldingerV2($params));
+        throw new \Exception('It is not possible to delete registrations using the SOAP webservice');
     }
 }

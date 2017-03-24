@@ -47,11 +47,6 @@ class Response implements ResponseInterface
     {
         if (!empty($this->response->HentBehandledeTilmeldingerV2Result)) {
             return $this->response->HentBehandledeTilmeldingerV2Result;
-        } elseif (!empty($this->response->SletTilmeldingerV2Result)) {
-            if ($this->response->SletTilmeldingerV2Result) {
-                throw new \Exception($this->response->SletTilmeldingerV2Result);
-            }
-            return $this->response->SletTilmeldingerV2Result;
         } elseif (!empty($this->response->HentNyeTilmeldingerV2Result)) {
             return $this->response->HentNyeTilmeldingerV2Result;
         } elseif (!empty($this->response->NyTilmelding2Result)) {

@@ -75,6 +75,6 @@ class RegistrationRepository
      */
     public function delete($weblist_id)
     {
-        return $this->client->deleteRegistrations($weblist_id);
+        throw new \Exception('It is not possible to delete registrations using the SOAP webservice');
     }
 }

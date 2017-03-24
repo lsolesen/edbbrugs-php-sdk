@@ -20,6 +20,4 @@ interface ClientInterface
     public function getHandledRegistrations();
 
     public function createNewRegistrations(array $registrations);
-
-    public function deleteRegistrations($weblist_id);
 }

@@ -94,10 +94,6 @@ $registration_repository->getNewRegistrations();
 
 // Get handled registrations.
 $registration_repository->getHandledRegistrations();
-
-// Delete registration.
-$id_webliste = 72200;
-$registration_repository->delete($id_webliste);
 ?>
 ```
 
@@ -111,4 +107,4 @@ If you want to test the integration, please create a ´phpunit.xml´ based on ´
 
     php vendor/bin/phpunit tests
 
-During testing you need to manually delete the web registrations using the Windows EDB-BRUGS program.
+During testing you need to manually delete the web registrations using the Windows EDB-BRUGS program. *There is no way to delete using the SOAP webservice*.
