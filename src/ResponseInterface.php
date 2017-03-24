@@ -22,7 +22,8 @@ namespace EDBBrugs;
  * @license  MIT Open Source License https://opensource.org/licenses/MIT
  * @version  GIT: <git_id>
  */
-interface ResponseInterface {
+interface ResponseInterface
+{
     public function getBody();
     public function getCount();
     public function isOk();

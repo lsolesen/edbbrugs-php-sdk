@@ -62,7 +62,6 @@ class RegistrationsCreateResponse extends Response
         $string = 'Oprettelse Ok, nye tilmeldinger';
         $result = strpos($this->response->NyTilmelding2Result, $string);
         return ($result !== false);
-
     }
 
     /**
