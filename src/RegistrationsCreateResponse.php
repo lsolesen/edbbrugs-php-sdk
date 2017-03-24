@@ -13,6 +13,8 @@
 
 namespace EDBBrugs;
 
+use EDBBrugs\Response;
+
 /**
  * Service Communicator with EDB-Brugs
  *
@@ -22,55 +24,57 @@ namespace EDBBrugs;
  * @license  MIT Open Source License https://opensource.org/licenses/MIT
  * @version  GIT: <git_id>
  */
-class Service
+class RegistrationsCreateResponse extends Response
 {
-    protected $soap;
     protected $response;
 
     /**
      * Constructor
      *
-     * @param object $soap Soap Client
+     * @param object $response Actual response from SOAP
      */
-    public function __construct($soap)
+    public function __construct($response)
     {
-        $this->soap = $soap;
+        $this->response = $response;
     }
 
     /**
      * Add new registration to EDBBrugs
      *
-     * @param object $request The XML request to use when adding a new registration
-     *
-     * @return mixed (number of successful registrations) or throws Exception
+     * @return mixed (number of successful registrations) or
+     * @throws \Exception
      */
-    public function addNewRegistration(Registration $request)
+    public function getBody()
     {
-        $request->getRequest();
-        $this->response = $this->soap->NyTilmelding2(
-            array(
-                'XmlData' => new \SoapVar($request->getRequest(), XSD_STRING)
-            )
-        );
         if (!$this->isOk()) {
             throw new \Exception($this->response->NyTilmelding2Result);
         }
+        return $this->response->NyTilmelding2Result;
+    }
+
+    /**
+     * Checks whether the communication is a success
+     *
+     * @return boolean
+     */
+    public function isOk()
+    {
+        $string = 'Oprettelse Ok, nye tilmeldinger';
+        $result = strpos($this->response->NyTilmelding2Result, $string);
+        return ($result !== false);
+    }
+
+    /**
+     * Returns how many registrations has been created
+     *
+     * @return mixed
+     */
+    public function getCount()
+    {
         return str_replace(
             'Oprettelse Ok, nye tilmeldinger: ',
             '',
             $this->response->NyTilmelding2Result
         );
-    }
-
-    /**
-     * Checks whether the communication is OK
-     *
-     * @return boolean
-     */
-    protected function isOk()
-    {
-        $string = 'Oprettelse Ok, nye tilmeldinger';
-        $result = strpos($this->response->NyTilmelding2Result, $string);
-        return ($result !== false);
     }
 }
