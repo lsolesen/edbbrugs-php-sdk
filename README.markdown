@@ -30,7 +30,7 @@ Simply add a dependency on lsolesen/edbbrugs-php-sdk to your project's `composer
 ```
 {
     "require": {
-        "lsolesen/edbbrugs-php-sdk": "dev-master"
+        "lsolesen/edbbrugs-php-sdk": "0.2.*"
     }
 }
 ```
