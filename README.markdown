@@ -30,7 +30,7 @@ Simply add a dependency on lsolesen/edbbrugs-php-sdk to your project's `composer
 ```
 {
     "require": {
-        "lsolesen/edbbrugs-php-sdk": "dev-master"
+        "lsolesen/edbbrugs-php-sdk": "0.2.*"
     }
 }
 ```
@@ -53,8 +53,8 @@ $registration_repository = new RegistrationRepository($client);
 // Add registrations.
 $registrations = array(
     array(
-        'Kartotek' => 'XX',
-        'Kursus' => 'Vinterkursus 18/19',
+        'Kartotek' => 'XX', // required - provided by the user of EDB-Brugs
+        'Kursus' => 'Vinterkursus 18/19', // required - name of the course
         // The following is available for Elev, Mor, Far, Voksen
         'Elev.Fornavn' => 'Svend Aage',
         'Elev.Efternavn' => 'Thomsen',
@@ -71,7 +71,7 @@ $registrations = array(
         'Elev.Land' => 'Danmark',
         'Elev.Notat' => 'Svend Aage Thomsen er skolens grundlægger',
         // Specific for student
-        'Elev.Linje' => 'Fodbold',
+        'Elev.Linje' => 'Fodbold', // optional
         'Voksen.Fornavn' => 'Svend Aage',
         'Voksen.Efternavn' => 'Thomsen',
         'Voksen.Adresse' => 'Ørnebjergvej 28',
