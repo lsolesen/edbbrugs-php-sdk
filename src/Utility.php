@@ -78,7 +78,7 @@ class Utility implements UtilityInterface
      * @param  array   $haystack  The array to search in
      * @return boolean
      */
-    function substrInArray($needle, array $haystack)
+    private function substrInArray($needle, array $haystack)
     {
         $filtered = array_filter($haystack, function ($item) use ($needle) {
             return false !== strpos($item, $needle);
