@@ -46,8 +46,8 @@ class Credentials implements CredentialsInterface
     public function getArray()
     {
         return array(
-            'Brugernavn' => 'Vejleidr',
-            'SystemKode' => '|3wDwu9X',
-            'Skolekode' => '630300');
+            'Brugernavn' => $this->getUsername(),
+            'SystemKode' => $this->getPassword(),
+            'Skolekode' => $this->getSchoolCode());
     }
 }
