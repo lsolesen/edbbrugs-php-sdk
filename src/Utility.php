@@ -29,7 +29,7 @@ class Utility implements UtilityInterface
     /**
      * Gets country code
      *
-     * $return mixed integer / null
+     * $return integer
      */
     public function getCountryCode($country)
     {
@@ -41,7 +41,7 @@ class Utility implements UtilityInterface
     /**
      * Gets municipality code
      *
-     * $return mixed integer / null
+     * $return integer
      */
     public function getMunicipalityCode($municipality)
     {
@@ -63,10 +63,27 @@ class Utility implements UtilityInterface
         $header_row = fgetcsv($ch);
 
         // This will loop through all the rows until it reaches the end
-        while ($row = fgetcsv($ch)) {
-            if (in_array($search, $row)) {
+        while ($row = fgetcsv($ch, 0, ";")) {
+            if ($this->substr_in_array($search, $row)) {
                 return $row;
             }
         }
+        return 0;
+    }
+
+    /**
+     * A version of in_array() that does a sub string match on $needle
+     *
+     * @param  mixed   $needle    The searched value
+     * @param  array   $haystack  The array to search in
+     * @return boolean
+     */
+    function substr_in_array($needle, array $haystack)
+    {
+        $filtered = array_filter($haystack, function ($item) use ($needle) {
+            return false !== strpos($item, $needle);
+        });
+
+        return !empty($filtered);
     }
 }

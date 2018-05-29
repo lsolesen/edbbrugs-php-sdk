@@ -21,7 +21,7 @@ class UtilityTest extends \PHPUnit_Framework_TestCase
     public function testGetCountryCodeThatIsNotFound()
     {
         $utility = new Utility();
-        $this->assertEquals(null, $utility->getCountryCode("Unknown"));
+        $this->assertEquals(0, $utility->getCountryCode("Unknown"));
     }
 
     /**
@@ -40,6 +40,6 @@ class UtilityTest extends \PHPUnit_Framework_TestCase
     public function testGetMunicipalityCodeThatIsNotFound()
     {
         $utility = new Utility();
-        $this->assertEquals(null, $utility->getMunicipalityCode("NotFound"));
+        $this->assertEquals(0, $utility->getMunicipalityCode("NotFound"));
     }
 }
