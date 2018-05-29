@@ -14,6 +14,7 @@
 namespace EDBBrugs;
 
 use EDBBrugs\ClientInterface;
+use EDBBrugs\UtilityInterface;
 
 /**
  * Service Communicator with EDB-Brugs
@@ -41,6 +42,14 @@ class Client implements ClientInterface
     }
 
     /**
+     * Gets the utility class for
+     */
+    protected function getUtilityClass()
+    {
+        return new Utility;
+    }
+
+    /**
      * Create new registrations from array
      *
      * @param array $registrations
@@ -57,6 +66,12 @@ class Client implements ClientInterface
         foreach ($registrations as $registration) {
             $reg = $xml->addChild('Tilmelding');
             foreach ($registration as $key => $value) {
+                if (strpos($key, '.Land') !== false) {
+                    $value = $this->getUtilityClass()->getCountryCode($value);
+                }
+                if (strpos($key, '.Kommune') !== false) {
+                    $value = $this->getUtilityClass()->getMunicipalityCode($value);
+                }
                 $reg->addChild($key, $value);
             }
         }

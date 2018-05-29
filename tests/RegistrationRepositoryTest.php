@@ -81,6 +81,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Elev.Lokalby' => 'Grejs',
                 'Elev.Postnr' => '7100',
                 'Elev.Bynavn' => 'Vejle',
+                'Elev.Kommune' => 'Vejle',
                 'Elev.CprNr' => '010119421942',
                 'Elev.Fastnet' => '75820811',
                 'Elev.FastnetBeskyttet' => 0, // 0 = No, 1 = Yes

@@ -1,0 +1,209 @@
+ID;Nationalitet;Kode;IsoKode
+1;Afghanistan;404;AF
+2;Ækvatorial Guinea;230;GQ
+3;Albanien;122;AL
+4;Algeriet;202;DZ
+5;Andorra;124;AD
+6;Angola;204;AO
+7;Antigua og Barbuda;309;AG
+8;Argentina;302;AR
+9;Armenien;708;AM
+10;Aruba;301;AW
+11;Australien;502;AU
+12;Aserbajdsjan;710;AZ
+13;Bahamas;303;BS
+14;Bahrain;406;BH
+15;Bangladesh;410;BD
+16;Barbedos;305;BB
+17;Hviderusland;706;BY
+18;Belgien;126;BE
+19;Belize;526;BZ
+20;Benin;281;BJ
+21;Bermuda;307;BM
+22;Bhutan;408;BT
+23;Bolivia;304;BO
+24;Bosnien-Herzegovina;754;BA
+25;Botswana;207;BW
+26;Brasilien;306;BR
+27;Bulgarien;128;BG
+28;Burkina Faso;294;BF
+29;Burundi;213;BI
+30;Cambodia;416;KH
+31;Cameroun;277;CM
+32;Canada;314;CA
+33;Cap Verde;233;CV
+34;Centr. Afrikansk Rep.;276;CF
+35;Chile;316;CL
+36;Colombia;318;CO
+37;Comorerne;215;CC
+38;Congo;279;CG
+39;Cook Øerne;516;CK
+40;Costa Rica;322;CR
+41;Cuba;324;CU
+42;Curacao;325;CW
+43;Cypern;422;CY
+44;Danmark;100;DK
+45;Darussalam (Brunei);412;BN
+46;Djibouti;525;DJ
+47;Dominica;345;DM
+48;Dominikanske Rep.;326;DO
+49;Ecuador;328;EC
+50;El Salvador;372;SV
+51;Elfenbenskysten;282;CI
+52;Eritrea;216;ER
+53;Estland;607;EE
+54;Ethiopien;214;ET
+55;Falklands Øerne;530;FK
+56;Fiji;508;FJ
+57;Finland;104;FI
+58;For. Arab. Emirater;403;AE
+59;Frankrig;130;FR
+60;Fransk Besidd. i Stillehavet;506;TF
+61;Fransk Guyana;529;GF
+62;Færøerne;902;FO
+63;Gabon;283;GA
+64;Gambia;222;GM
+65;Georgien;724;GE
+66;Ghana;228;GH
+67;Grenada;339;GD
+68;Grækenland;134;GR
+69;Grønland;101;GL
+70;Guadeloupe;528;GP
+71;Guatemala;338;GT
+72;Guinea;232;GN
+73;Guinea Bissau;231;GW
+74;Guyana;308;GY
+75;Haiti;342;HT
+76;Holland;140;NL
+77;Honduras;348;HN
+78;Hongkong;428;HK
+79;Indien;432;IN
+80;Indonesien;434;ID
+81;Irak;436;IQ
+82;Iran;438;IR
+83;Irland;142;IE
+84;Island;105;IS
+85;Israel;442;IL
+86;Italien;150;IT
+87;Jamaica;352;JM
+88;Japan;444;JP
+89;Jordan;446;JO
+90;Kazakstan;716;KZ
+91;Kenya;234;KE
+92;Kina Folkerep.;448;CN
+93;Kirgizstin;720;KG
+94;Kiribati;274;KI
+95;Nordkorea;466;KP
+96;Kroatien;750;HR
+97;Kuwait;452;KW
+98;Laos;454;LA
+99;Lesotho;235;LS
+100;Letland;609;LV
+101;Libanon;456;LB
+102;Liberia;236;LR
+103;Libyen;238;LY
+104;Lichtenstein;107;LI
+105;Litauen;611;LT
+106;Luxenbourg;108;LU
+107;Macao;533;MO
+108;Madagascar;242;MG
+109;Makedonien;756;MK
+110;Malasyia;458;MY
+111;Malawi;297;MW
+112;Maldiverne;457;MV
+113;Mali;243;ML
+114;Malta;153;MT
+115;Marokko;244;MA
+116;Martinique;353;MQ
+117;Mauretanien;284;MR
+118;Mauritius;245;MU
+119;Mexico;354;MX
+120;Mocambique;240;MZ
+121;Moldova;712;MD
+122;Monaco;109;MC
+123;Mongoliet;459;MN
+124;Muanar (Burma);414;MM
+125;Namibia;247;NA
+126;Nauru;310;NR
+127;Nepal;464;NP
+128;New Zealand;514;NZ
+129;Nicaragua;356;NI
+130;Niger;285;NE
+131;Nigeria;246;NG
+132;Norge;110;NO
+133;Oman;462;OM
+134;Pakistan;586;PK
+135;Palæstina;275;PS
+136;Panama;358;PA
+137;Papua\, Ny Guinea;534;PG
+138;Paraguay;364;PY
+139;Peru;366;PE
+140;Philippinerne;474;PH
+141;Polen;154;PL
+142;Portugal;156;PT
+143;Puerto Rico;527;PR
+144;Qatar;496;QA
+145;Reunion;286;RE
+146;Rumænien;158;RO
+147;Rusland;700;RU
+148;Rwanda;287;RW
+149;Salomon Øerne;623;SB
+150;Samoa;522;AS
+151;San Marino;159;SM
+152;Sankt Lucia;347;LC
+153;Sao Tome pg Tobago;374;ST
+154;Saudi Arabien;478;SA
+155;Schweiz;160;CH
+156;Senegal;288;SN
+157;Seyehellerne;298;SC
+158;Sierre Leone;255;SL
+159;Singapore;482;SG
+160;Slovakiet;778;SK
+161;Slovenien;752;SI
+162;Somalia;289;SO
+163;Spanien;164;ES
+164;Sri Lanka;418;LK
+165;St. Helena;253;SH
+166;St.Vincent og Gredadinerne;621;VC
+167;Statsløs;103;ZZ
+168;Storbritannien;170;GB
+169;Sudan;258;SD
+170;Sverige;120;SE
+171;Swaziland;259;SZ
+172;Sydkorea;484;KR
+173;Sydafrikanske Republik;262;ZA
+174;Syrien;486;SY
+175;Tadzhikistan;722;TJ
+176;Taiwan;424;TW
+177;Tanzania;266;TZ
+178;Tchad;292;TD
+179;Thailand;492;TH
+180;Tjekkeiske Republik;776;CZ
+181;Togo;293;TG
+182;Tonga;505;TO
+183;Tunesien;268;TN
+184;Turkmenistan;718;TM
+185;Tuvalu;273;TV
+186;Tyrkiet;172;TR
+187;Tyskland;180;DE
+188;Uganda;269;UG
+189;Ukraine;704;UA
+190;Ungarn;174;HU
+191;Uruguay;376;UY
+192;USA;390;US
+193;Uzbekistan;714;UZ
+194;Vanuatu;548;VU
+195;Vatikanstaten;176;VA
+196;Venezuela;392;VE
+197;Vestindiske øer;395;VI
+198;Vietnam;488;VN
+199;Yemen;402;YE
+200;Ukendt;0;ZZ
+201;Zaire;278;CD
+202;Zambia;296;ZM
+203;Ægypten;272;EG
+204;Øst Timor;532;TL
+205;Østrig;182;AT
+206;Serbien;779;RS
+207;Zimbabwe;295;ZW
+208;Montenegro;382;ME
