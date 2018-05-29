@@ -24,6 +24,6 @@
         <const name="USERNAME" value=""/>
         <const name="PASSWORD" value=""/>
         <const name="SKOLEKODE" value=""/>
-        <const name="WSDL" value=""/>
+        <const name="WSDL" value="https://www.webtilmeldinger.dk/TilmeldingsFormularV2Ws/Service.asmx?wsdl"/>
     </php>
 </phpunit>
