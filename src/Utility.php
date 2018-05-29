@@ -64,7 +64,7 @@ class Utility implements UtilityInterface
 
         // This will loop through all the rows until it reaches the end
         while ($row = fgetcsv($ch, 0, ";")) {
-            if ($this->substr_in_array($search, $row)) {
+            if ($this->substrInArray($search, $row)) {
                 return $row;
             }
         }
@@ -78,7 +78,7 @@ class Utility implements UtilityInterface
      * @param  array   $haystack  The array to search in
      * @return boolean
      */
-    function substr_in_array($needle, array $haystack)
+    function substrInArray($needle, array $haystack)
     {
         $filtered = array_filter($haystack, function ($item) use ($needle) {
             return false !== strpos($item, $needle);
