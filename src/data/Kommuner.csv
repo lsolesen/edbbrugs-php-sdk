@@ -1,99 +1,99 @@
-ID,ID_UU_Center,KommuneNr,KommuneNavn,Adresse,LokalBy,Postnr,Bynavn,Telefon,Email,Hjemmeside,EANnr,Notat,RetAf,Rettet,Uaktuel
-"1","1","101","Københavns Kommune","Rådhuset","","1599","København·V","","info@of.kk.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"2","2","147","Frederiksberg Kommune","Smallegade 1","","2000","Frederiksberg","","raadhuset@frederiksberg.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"3","5","151","Ballerup Kommune","Hold-an Vej 7","","2750","Ballerup","","balkom@balk.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"4","3","153","Brøndby Kommune","Park Allé 160\, Postboks 178","","2605","Brøndby","","brondby-kom@brondby-kom.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"5","6","155","Dragør Kommune","Kirkevej 7","","2791","Dragør","","dragoer@dragoer.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"6","7","157","Gentofte Kommune","Bernstorffsvej 161","","2920","Charlottenlund","","gentofte@gentofte.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"7","7","159","Gladsaxe Kommune","Rådhus Allé","","2860","Søborg","","kommunen@gladsaxe.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"8","5","161","Glostrup Kommune","Rådhusparken 2","","2600","Glostrup","","glostrup.kommune@glostrup.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"9","7","163","Herlev Kommune","Herlev Bygade 90","","2730","Herlev","","herlev@herlev.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"10","5","165","Albertslund Kommune","Nordmarks Alle 1","","2620","Albertslund","","albertslund@albertslund.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"11","3","167","Hvidovre Kommune","Hvidovrevej 278","","2650","Hvidovre","","hvidovre@hvidovre.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"12","5","169","Høje-Taastrup Kommune","Bygaden 2","","2630","Taastrup","","kommune@htk.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"13","7","173","Lyngby-Taarbæk Kommune","Lyngby Torv","","2800","Kgs. Lyngby","","lyngby@ltk.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"14","5","175","Rødovre Kommune","Rødovre Parkvej 150","","2610","Rødovre","","rk@rk.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"15","3","183","Ishøj Kommune","Ishøj Store Torv 20","","2635","Ishøj","","ishojkommune@ishoj.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"16","6","185","Tårnby Kommune","Amager Landevej 76","","2770","Kastrup","","kommunen@taarnby.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"17","53","187","Vallensbæk Kommune","Vallensbæk Stationstorv 100","","2665","Vallensbæk·Strand","","raadhus@vallensbaek.dk",\N,"",\N,"SYSTEM","2017-02-28 15:32:30","0"
-"18","10","190","Furesø Kommune","Stiager 2","","3500","Værløse","","post@vaerloese.dk",\N,"",\N,"SYSTEM","2017-03-01 10:13:57","0"
-"19","10","201","Allerød Kommune","Rådhusvej 1","","3450","Allerød","","kommunen@alleroed.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"20","8","210","Fredensborg Kommune","Egevangen 3","","2980","Kokkedal","","chbi@fhkom.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"21","8","217","Helsingør Kommune","Stengade 59","","3000","Helsingør","","mail@helsingor.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"22","9","219","Hillerød Kommune","Fredriksværksgade 39","","3400","Hillerød","","hillerod@hillerod.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"23","10","223","Hørsholm Kommune","Ådalsparkvej 2","","2970","Hørsholm","","kommunen@horsholm.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"24","10","230","Rudersdal Kommune","Øverødvej 2","","2840","Holte","","kommunen@sollerod.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"25","11","240","Egedal Kommune","Rådhus Allé 1","","3650","Ølstykke","","kommune@oelstykke.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"26","11","250","Frederikssund Kommune","Torvet 6","","3600","Fredrikssund","","samsek@frederikssund-kom.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"27","4","253","Greve Kommune","Rådhusholmen 10","","2670","Greve","","raadhus@greve.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"28","4","259","Køge Kommune","Torvet 1","","4600","Køge","","raadhus@koegekom.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"29","9","260","Halsnæs Kommune","Rådhuspladsen 1","","3300","Frederiksværk","","slumail@fhkommune.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"30","12","265","Roskilde Kommune","Stændertorvet 1","","4000","Roskilde","","kommunen@nyroskilde.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"31","4","269","Solrød Kommune","Solrød Center 1","","2680","Solrød·Strand","","kommune@solrod.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"32","56","270","Gribskov Kommune","Birkevang 214","","3250","Gilleleje","","gribskov@gribskov.dk",\N,"",\N,"SYSTEM","2017-03-01 12:11:11","0"
-"33","14","306","Odsherred Kommune","Rådhusvej 75","","4540","Fårevejle","","sammenlaegningssekretariatet@o",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"34","14","316","Holbæk Kommune","Jernbanevej 6\,","","4300","Holbæk","","sammail@holbkom.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"35","15","320","Faxe Kommune","Fredriksgade 9","","4690","Haslev","","amjo@faxekommune.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"36","14","326","Kalundborg Kommune","Klosterparkvej 7","","4400","Kalundborg","","nykalundborg@kalundborg.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"37","13","329","Ringsted Kommune","Sct. Bendtsgade 1","","4100","Ringsted","","ringsted@ringsted.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"38","13","330","Slagelse Kommune","Rådhuspladsen 9\, 2. t.h.","","4200","Slagelse","","nyslagelse@nyslagelse.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"39","4","336","Stevns Kommune","Hovedgaden 46","","4652","Haarlev","","slu-sekr@stevns.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"40","13","340","Sorø Kommune","Rådhusvej 8","","4180","Sorø","","sls@soroe.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"41","12","350","Lejre Kommune","Møllebjergvej 4","","4330","Hvalsø","","amal@lejre.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"42","16","360","Lolland Kommune","Jernbanegade 7","","4930","Maribo","","lolland@lolland.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"43","15","370","Næstved Kommune","Teatergaden 8","","4700","Næstved","","slu-sekr@naeskom.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"44","16","376","Guldborgsund Kommune","Sammenlægningssekretariatet","","4800","Nykøbing F.","","sekretariatet@guldborgsund.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"45","15","390","Vordingborg Kommune","Østergårdstræde 1 A","","4772","Langebæk","","slusek@vordbkom.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"46","17","400","Bornholms Regionskommune ","Postboks 190","","3700","Rønne","","post@brk.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"47","27","410","Middelfart Kommune","Østergade","","5500","Middelfart","","martin.albertsen@middelfart.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"48","18","420","Assens Kommune","Møllebakken 22","","5690","Tommerup","","fb@tommerup.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"49","19","430","Faaborg-Midtfyn Kommune","Tinghøj alle 2","","5750","Ringe","","slu@ringe.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"50","18","440","Kerteminde Kommune","Rådhuset","","5300","Kerteminde","","kommune@kerteminde.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"51","18","450","Nyborg Kommune","Torvet 1","","5800","Nyborg","","samudvalg@nyborg.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"52","18","461","Odense Kommune","Flakhaven 2","","5000","Odense·C","","odense@odense.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"53","19","479","Svendborg Kommune","Ramsherred 5","","5700","Svendborg","","samsek@svendborg.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"54","18","480","Nordfyns Kommune","Sammenlægningsudvalget","","5450","Otterup","","otterup@otterup.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"55","19","482","Langeland Kommune","Torvet","","5900","Rudkøbing","","jch@rudkom.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"56","19","492","Ærø Kommune","Statene 2","","5970","Ærøskøbing","","post@aeroekommune.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"57","24","510","Haderslev Kommune","Gåskærgade 26-28","","6100","Haderslev","","post@haderslev.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"58","46","530","Billund Kommune","Jorden Rundt 1","","7200","Grindsted","","fbbk@grindsted.dk",\N,"",\N,"SYSTEM","2017-02-28 15:28:21","0"
-"59","23","540","Sønderborg Kommune","Rådhustorvet 10","","6400","Sønderborg","","slu@sonderborg.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"60","22","550","Tønder Kommune","Kongevej 57","","6270","Tønder","","toender@toender.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"61","25","561","Esbjerg Kommune","Torvegade 74","","6700","Esbjerg","","b-f@esbjergkommune.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"62","25","563","Fanø Kommune","Skolevej 5-7","","6720","Fanø","","raadhuset@fanoe.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"63","54","573","Varde Kommune","Bytoften 2","","6800","Varde","","ny@varde.dk",\N,"",\N,"SYSTEM","2017-03-01 10:26:15","0"
-"64","55","575","Vejen Kommune","Rådhuspassagen","","6600","Vejen","","nyvejen@vejenkommune.dk",\N,"",\N,"SYSTEM","2017-03-01 10:26:18","0"
-"65","21","580","Aabenraa Kommune","Storegade 30","","6200","Aabenraa","","jbp@aabenraakom.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"66","27","607","Fredericia Kommune","Gothersgade 20","","7000","Fredericia","","kommunen@fredericiakom.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"67","48","615","Horsens Kommune","Rådhustorvet 4","","8700","Horsens","","horsens.kommune@horsens.dk",\N,"",\N,"SYSTEM","2017-03-01 10:22:02","0"
-"68","20","621","Kolding Kommune","Akseltorv 1","","6000","Kolding","","raadhus@kolding.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"69","28","630","Vejle Kommune","Skolegade 1","","7100","Vejle","","raj@vejle.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"70","29","657","Herning Kommune","Torvet 5","","7400","Herning","","Central@herning.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"71","30","661","Holstebro Kommune","Kirkestræde 11","","7500","Holstebro","","nyholstebro@holstebro.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"72","30","665","Lemvig Kommune","Rådhusgade 2","","7620","Lemvig","","lemvig.kommune@lemvig.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"73","30","671","Struer Kommune","Østergade 11-15","","7600","Struer","","struer@struer.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"74","36","706","Syddjurs Kommune","Lundbergsvej 2","","8400","Ebeltoft","","syddjurs@syddjurs.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"75","36","707","Norddjurs Kommune","Torvet 3","","8500","Grenå","","grenaakommune@grenaakommune.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"76","35","710","Favrskov Kommune","Skovvej 20","","8382","Hinnerup","","Favrskov@favrskov.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"77","38","727","Odder Kommune","Rådhusgade 3","","8300","Odder","","odder.kommune@odder.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"78","41","730","Randers Kommune","Laksetorvet","","8900","Randers","","mail@nyranderskommune.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"79","37","740","Silkeborg Kommune","Søvej 1","","8600","Silkeborg","","sammenlaegningssekretariatet@s",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"80","34","741","Samsø Kommune","Langgade 1","","8305","Samsø","","kommune@samsoe.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"81","38","746","Skanderborg Kommune","Adelgade 44","","8660","Skanderborg","","mail@nyskanderborg.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"82","34","751","Århus Kommune","Postboks 32 eller 36","","8100","Århus·C","","aarhus.kommune@aarhus.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"83","49","756","Ikast-Brande Kommune","Torvet","","7430","Ikast","","post@ikast.dk",\N,"",\N,"SYSTEM","2017-03-01 10:22:30","0"
-"84","26","760","Ringkøbing-Skjern Kommune","Ved Fjorden 6","","6950","Ringkøbing","","rsclan@ringkom.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"85","39","766","Hedensted Kommune","Niels Espesvej 8","","8722","Hedensted","","nyhedensted@hedensted.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"86","33","773","Morsø Kommune","Jernbanevej 7","","7900","Nykøbing·M","","kommunen@morsoe.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"87","32","779","Skive Kommune","Østergade 29","","7800","Skive","","rl@skivekommune.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"88","31","787","Thisted Kommune","Asylgade 30","","7700","Thisted","","samsek@thisted.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"89","40","791","Viborg Kommune","Rødevej 3","","8800","Viborg","","SAMU-sekr@viborgkommune.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"90","44","810","Brønderslev-Dronninglund Kommune","Ny Rådhusplads 1","","9700","Brønderslev","","raadhus@brslevkom.dk",\N,"",\N,"SYSTEM","2017-02-28 15:35:08","0"
-"91","47","813","Frederikshavn Kommune","Rådhus Allé 100","","9900","Frederikshavn","","sammenlaegningssekretariatet@f",\N,"",\N,"SYSTEM","2017-03-01 10:13:38","0"
-"92","43","820","Vesthimmerlands Kommune","Himmerlandsgade 27","","9600","Aars","","raadhuset@aarskommune.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"93","42","825","Læsø Kommune","Doktorvejen 2","","9940","Læsø","","kommunen@laesoe.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"94","52","840","Rebild Kommune","Hobrovej 88","","9530","Støvring","","sammenlaegningssekret@stoevrin",\N,"",\N,"SYSTEM","2017-03-01 10:24:16","0"
-"95","51","846","Mariagerfjord Kommune","Vestergade 34","","9500","Hobro","","sekretariat@mariagerfjordkommu",\N,"",\N,"SYSTEM","2017-03-01 10:23:24","0"
-"96","50","849","Jammerbugt Kommune","Borgervænget 12","","9460","Brovst","","sammenlaegningssekretariatet@j",\N,"",\N,"SYSTEM","2017-03-01 10:22:42","0"
-"97","42","851","Aalborg Kommune","Boulevarden 13","","9100","Aalborg","","anf@aalborg.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
-"98","45","860","Hjørring Kommune","Nørregade 2","","9800","Hjørring","","samlag@hjoerringkom.dk",\N,"",\N,"SYSTEM","2015-04-24 11:24:45","0"
+ID;;;;;;;;;;;;;;
+1;1;101;KÃ¸benhavns Kommune;;;;;;;;;;;
+2;2;147;Frederiksberg Kommune;;;;;;;;;;;
+3;5;151;Ballerup Kommune;;;;;;;;;;;
+4;3;153;BrÃ¸ndby Kommune;;;;;;;;;;;
+5;6;155;DragÃ¸r Kommune;;;;;;;;;;;
+6;7;157;Gentofte Kommune;;;;;;;;;;;
+7;7;159;Gladsaxe Kommune;;;;;;;;;;;
+8;5;161;Glostrup Kommune;;;;;;;;;;;
+9;7;163;Herlev Kommune;;;;;;;;;;;
+10;5;165;Albertslund Kommune;;;;;;;;;;;
+11;3;167;Hvidovre Kommune;;;;;;;;;;;
+12;5;169;HÃ¸je-Taastrup Kommune;;;;;;;;;;;
+13;7;173;Lyngby-TaarbÃ¦k Kommune;;;;;;;;;;;
+14;5;175;RÃ¸dovre Kommune;;;;;;;;;;;
+15;3;183;IshÃ¸j Kommune;;;;;;;;;;;
+16;6;185;TÃ¥rnby Kommune;;;;;;;;;;;
+17;53;187;VallensbÃ¦k Kommune;;;;;;;;;;;
+18;10;190;FuresÃ¸ Kommune;;;;;;;;;;;
+19;10;201;AllerÃ¸d Kommune;;;;;;;;;;;
+20;8;210;Fredensborg Kommune;;;;;;;;;;;
+21;8;217;HelsingÃ¸r Kommune;;;;;;;;;;;
+22;9;219;HillerÃ¸d Kommune;;;;;;;;;;;
+23;10;223;HÃ¸rsholm Kommune;;;;;;;;;;;
+24;10;230;Rudersdal Kommune;;;;;;;;;;;
+25;11;240;Egedal Kommune;;;;;;;;;;;
+26;11;250;Frederikssund Kommune;;;;;;;;;;;
+27;4;253;Greve Kommune;;;;;;;;;;;
+28;4;259;KÃ¸ge Kommune;;;;;;;;;;;
+29;9;260;HalsnÃ¦s Kommune;;;;;;;;;;;
+30;12;265;Roskilde Kommune;;;;;;;;;;;
+31;4;269;SolrÃ¸d Kommune;;;;;;;;;;;
+32;56;270;Gribskov Kommune;;;;;;;;;;;
+33;14;306;Odsherred Kommune;;;;;;;;;;;
+34;14;316;HolbÃ¦k Kommune;;;;;;;;;;;
+35;15;320;Faxe Kommune;;;;;;;;;;;
+36;14;326;Kalundborg Kommune;;;;;;;;;;;
+37;13;329;Ringsted Kommune;;;;;;;;;;;
+38;13;330;Slagelse Kommune;;;;;;;;;;;
+39;4;336;Stevns Kommune;;;;;;;;;;;
+40;13;340;SorÃ¸ Kommune;;;;;;;;;;;
+41;12;350;Lejre Kommune;;;;;;;;;;;
+42;16;360;Lolland Kommune;;;;;;;;;;;
+43;15;370;NÃ¦stved Kommune;;;;;;;;;;;
+44;16;376;Guldborgsund Kommune;;;;;;;;;;;
+45;15;390;Vordingborg Kommune;;;;;;;;;;;
+46;17;400;Bornholms Regionskommune ;;;;;;;;;;;
+47;27;410;Middelfart Kommune;;;;;;;;;;;
+48;18;420;Assens Kommune;;;;;;;;;;;
+49;19;430;Faaborg-Midtfyn Kommune;;;;;;;;;;;
+50;18;440;Kerteminde Kommune;;;;;;;;;;;
+51;18;450;Nyborg Kommune;;;;;;;;;;;
+52;18;461;Odense Kommune;;;;;;;;;;;
+53;19;479;Svendborg Kommune;;;;;;;;;;;
+54;18;480;Nordfyns Kommune;;;;;;;;;;;
+55;19;482;Langeland Kommune;;;;;;;;;;;
+56;19;492;Ã†rÃ¸ Kommune;;;;;;;;;;;
+57;24;510;Haderslev Kommune;;;;;;;;;;;
+58;46;530;Billund Kommune;;;;;;;;;;;
+59;23;540;SÃ¸nderborg Kommune;;;;;;;;;;;
+60;22;550;TÃ¸nder Kommune;;;;;;;;;;;
+61;25;561;Esbjerg Kommune;;;;;;;;;;;
+62;25;563;FanÃ¸ Kommune;;;;;;;;;;;
+63;54;573;Varde Kommune;;;;;;;;;;;
+64;55;575;Vejen Kommune;;;;;;;;;;;
+65;21;580;Aabenraa Kommune;;;;;;;;;;;
+66;27;607;Fredericia Kommune;;;;;;;;;;;
+67;48;615;Horsens Kommune;;;;;;;;;;;
+68;20;621;Kolding Kommune;;;;;;;;;;;
+69;28;630;Vejle Kommune;;;;;;;;;;;
+70;29;657;Herning Kommune;;;;;;;;;;;
+71;30;661;Holstebro Kommune;;;;;;;;;;;
+72;30;665;Lemvig Kommune;;;;;;;;;;;
+73;30;671;Struer Kommune;;;;;;;;;;;
+74;36;706;Syddjurs Kommune;;;;;;;;;;;
+75;36;707;Norddjurs Kommune;;;;;;;;;;;
+76;35;710;Favrskov Kommune;;;;;;;;;;;
+77;38;727;Odder Kommune;;;;;;;;;;;
+78;41;730;Randers Kommune;;;;;;;;;;;
+79;37;740;Silkeborg Kommune;;;;;;;;;;;
+80;34;741;SamsÃ¸ Kommune;;;;;;;;;;;
+81;38;746;Skanderborg Kommune;;;;;;;;;;;
+82;34;751;Ã…rhus Kommune;;;;;;;;;;;
+83;49;756;Ikast-Brande Kommune;;;;;;;;;;;
+84;26;760;RingkÃ¸bing-Skjern Kommune;;;;;;;;;;;
+85;39;766;Hedensted Kommune;;;;;;;;;;;
+86;33;773;MorsÃ¸ Kommune;;;;;;;;;;;
+87;32;779;Skive Kommune;;;;;;;;;;;
+88;31;787;Thisted Kommune;;;;;;;;;;;
+89;40;791;Viborg Kommune;;;;;;;;;;;
+90;44;810;BrÃ¸nderslev-Dronninglund Kommune;;;;;;;;;;;
+91;47;813;Frederikshavn Kommune;;;;;;;;;;;
+92;43;820;Vesthimmerlands Kommune;;;;;;;;;;;
+93;42;825;LÃ¦sÃ¸ Kommune;;;;;;;;;;;
+94;52;840;Rebild Kommune;;;;;;;;;;;
+95;51;846;Mariagerfjord Kommune;;;;;;;;;;;
+96;50;849;Jammerbugt Kommune;;;;;;;;;;;
+97;42;851;Aalborg Kommune;;;;;;;;;;;
+98;45;860;HjÃ¸rring Kommune;;;;;;;;;;;
