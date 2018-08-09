@@ -34,7 +34,7 @@ class Utility implements UtilityInterface
     public function getCountryCode($country)
     {
         $rows = $this->getCSV(DIRNAME(__FILE__) . "/data/Landekoder.csv", $country);
-        $stored_in_column = 2;
+        $stored_in_column = 3;
         return $rows[$stored_in_column];
     }
 
