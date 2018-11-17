@@ -69,7 +69,7 @@ class Client implements ClientInterface
                 foreach (array('.Fastnet', '.Mobil', '.ArbejdeTlf') as $variable) {
                     if (strpos($key, '.Fastnet') !== false) {
                         $value = $this->getUtilityClass()->fixPhoneNumber($value);
-                    }    
+                    }
                 }
                 foreach (array('.Kursus', '.Email') as $variable) {
                     if (strpos($key, $variable) !== false) {
