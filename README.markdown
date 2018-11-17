@@ -70,8 +70,8 @@ $registrations = array(
         'Elev.Email' => 'kontor@vih.dk',
         'Elev.Land' => 'Danmark',
         'Elev.Notat' => 'Svend Aage Thomsen er skolens grundlægger',
-        // Specific for student
-        'Elev.Linje' => 'Fodbold', // optional
+        'Elev.Linje' => 'Fodbold', // optional and specific for a student
+        // You can add Far, Mor, Voksen - but only one of each
         'Voksen.Fornavn' => 'Svend Aage',
         'Voksen.Efternavn' => 'Thomsen',
         'Voksen.Adresse' => 'Ørnebjergvej 28',
