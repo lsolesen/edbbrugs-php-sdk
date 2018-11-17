@@ -1,8 +1,12 @@
 # CHANGELOG
 
-## 0.3.1 - 2018-11-17
+## 0.4.1 - 2018-11-17
 
 - Trim variables to the correct length according to the documentation from EDBBrugs support
+
+## 0.4.0 - 2018-08-09
+
+- Also search for English country names
 
 ## 0.3.0 - 2018-05-29
 
