@@ -29,6 +29,8 @@ class Utility implements UtilityInterface
     /**
      * Gets country code
      *
+     * @param string $country Country name
+     *
      * $return integer
      */
     public function getCountryCode($country)
@@ -41,6 +43,8 @@ class Utility implements UtilityInterface
     /**
      * Gets municipality code
      *
+     * @param string $municipality Municipality name
+     *
      * $return integer
      */
     public function getMunicipalityCode($municipality)
@@ -49,6 +53,20 @@ class Utility implements UtilityInterface
         $stored_in_column = 2;
         return $rows[$stored_in_column];
     }
+
+    /**
+     * Remove spaces from phone number
+     *
+     * $param string $phone Phone number
+     *
+     * $return integer
+     */
+    public function fixPhoneNumber($phonenumber)
+    {
+        $string = preg_replace('/\s+/', '', $phonenumber);
+        return $string;
+    }
+
 
     /**
      * Loops through csv file and stops with search

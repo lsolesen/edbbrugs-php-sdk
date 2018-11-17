@@ -51,7 +51,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Elev.Postnr' => '7100',
                 'Elev.Bynavn' => 'Vejle',
                 'Elev.CprNr' => '010119421942',
-                'Elev.Fastnet' => '75820811',
+                'Elev.Fastnet' => '+46 70 716 31 39',
                 'Elev.FastnetBeskyttet' => 0, // 0 = No, 1 = Yes
                 'Elev.Mobil' => '75820811',
                 'Elev.MobilBeskyttet' => 0, // 0 = No, 1 = Yes
@@ -77,13 +77,13 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 // The following can be repeated for Mor, Far, Voksen
                 'Elev.Fornavn' => 'Ole',
                 'Elev.Efternavn' => 'Damgård',
-                'Elev.Adresse' => 'Ørnebjergvej 28',
+                'Elev.Adresse' => 'Ørnebjergvej 28, Ørnebjergvej 28, Ørnebjergvej 28',
                 'Elev.Lokalby' => 'Grejs',
                 'Elev.Postnr' => '7100',
                 'Elev.Bynavn' => 'Vejle',
                 'Elev.Kommune' => 'Vejle',
                 'Elev.CprNr' => '010119421942',
-                'Elev.Fastnet' => '75820811',
+                'Elev.Fastnet' => '+45 75 82 08 11',
                 'Elev.FastnetBeskyttet' => 0, // 0 = No, 1 = Yes
                 'Elev.Mobil' => '75820811',
                 'Elev.MobilBeskyttet' => 0, // 0 = No, 1 = Yes
@@ -96,7 +96,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Voksen.Lokalby' => 'Grejs',
                 'Voksen.Postnr' => '7100',
                 'Voksen.Bynavn' => 'Vejle',
-                'Voksen.Fastnet' => '75820811',
+                'Voksen.Fastnet' => '+45 75 82 08 11',
                 'Voksen.FastnetBeskyttet' => 0, // 0 = No, 1 = Yes
                 'Voksen.Mobil' => '75820811',
                 'Voksen.MobilBeskyttet' => 0, // 0 = No, 1 = Yes
@@ -155,6 +155,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
 
         try {
             $response = $repository->getNewRegistrations()->getBody();
+            $this->assertTrue(is_string($response));
         } catch (Exception $e) {
             print $this->soap->__getLastRequest();
             print $this->soap->__getLastResponse();

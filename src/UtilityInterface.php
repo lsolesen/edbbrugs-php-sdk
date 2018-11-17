@@ -33,4 +33,9 @@ interface UtilityInterface
      * Gets municipality code
      */
     public function getMunicipalityCode($municipality);
+
+    /**
+     * Gets municipality code
+     */
+    public function fixPhoneNumber($phonenumber);
 }
