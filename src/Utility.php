@@ -28,7 +28,7 @@ class Utility implements UtilityInterface
 {
     /**
      * Gets country code
-     * 
+     *
      * @param string $country Country name
      *
      * $return integer
@@ -42,7 +42,7 @@ class Utility implements UtilityInterface
 
     /**
      * Gets municipality code
-     * 
+     *
      * @param string $municipality Municipality name
      *
      * $return integer
@@ -58,7 +58,7 @@ class Utility implements UtilityInterface
      * Remove spaces from phone number
      *
      * $param string $phone Phone number
-     * 
+     *
      * $return integer
      */
     public function fixPhoneNumber($phonenumber)
