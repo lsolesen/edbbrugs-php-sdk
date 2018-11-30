@@ -27,16 +27,16 @@ use EDBBrugs\UtilityInterface;
 class Utility implements UtilityInterface
 {
     /**
-     * Gets country code
+     * Gets country name in Danish
      *
      * @param string $country Country name
      *
-     * $return integer
+     * $return string
      */
     public function getCountryCode($country)
     {
         $rows = $this->getCSV(DIRNAME(__FILE__) . "/data/Landekoder.csv", $country);
-        $stored_in_column = 3;
+        $stored_in_column = 1;
         return $rows[$stored_in_column];
     }
 
