@@ -48,6 +48,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Elev.Efternavn' => 'Thomsen',
                 'Elev.Adresse' => 'Ørnebjergvej 28',
                 'Elev.Lokalby' => 'Grejs',
+                'Elev.Kommune' => 'Vejle',
                 'Elev.Postnr' => '7100',
                 'Elev.Bynavn' => 'Vejle',
                 'Elev.CprNr' => '010119421942',
@@ -57,7 +58,33 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Elev.MobilBeskyttet' => 0, // 0 = No, 1 = Yes
                 'Elev.Email' => 'kontor@vih.dk',
                 'Elev.Land' => 'Danmark',
+                'EgneFelter.EgetFelt1' => '[Fri132]Har ungdomsuddannelse',
+                'EgneFelter.EgetFelt7' => '[Fri082]12.12.2018',
                 'Elev.Notat' => 'Svend Aage Thomsen er skolens grundlægger',
+                'Far.Fornavn' => 'Svend Aage',
+                'Far.Efternavn' => 'Thomsen',
+                'Far.Adresse' => 'Ørnebjergvej 28',
+                'Far.Lokalby' => 'Grejs',
+                'Far.Postnr' => '7100',
+                'Far.Bynavn' => 'Vejle',
+                'Far.Fastnet' => '75820811',
+                // 'Far.FastnetBeskyttet' => 0, // 0 = No, 1 = Yes
+                'Far.Mobil' => '75820811',
+                //'Far.MobilBeskyttet' => 0, // 0 = No, 1 = Yes
+                'Far.Email' => 'kontor@vih.dk',
+                'Far.Land' => 'DK',
+                'Mor.Fornavn' => 'Svend Aage',
+                'Mor.Efternavn' => 'Thomsen',
+                'Mor.Adresse' => 'Ørnebjergvej 28',
+                'Mor.Lokalby' => 'Grejs',
+                'Mor.Postnr' => '7100',
+                'Mor.Bynavn' => 'Vejle',
+                'Mor.Fastnet' => '75820811',
+                //'Mor.FastnetBeskyttet' => 0, // 0 = No, 1 = Yes
+                'Mor.Mobil' => '75820811',
+                //'Mor.MobilBeskyttet' => 0, // 0 = No, 1 = Yes
+                'Mor.Email' => 'kontor@vih.dk',
+                'Mor.Land' => 'DK',
                 'Voksen.Fornavn' => 'Svend Aage',
                 'Voksen.Efternavn' => 'Thomsen',
                 'Voksen.Adresse' => 'Ørnebjergvej 28',
@@ -101,7 +128,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Voksen.Mobil' => '75820811',
                 'Voksen.MobilBeskyttet' => 0, // 0 = No, 1 = Yes
                 'Voksen.Email' => 'kontor@vih.dk',
-                'Voksen.Land' => 'Danmark',
+                'Voksen.Land' => 'Denmark',
             ),
         );
     }
