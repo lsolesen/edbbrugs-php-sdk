@@ -65,7 +65,6 @@ class Client implements ClientInterface
         $user->addChild('Skolekode', $this->credentials->getSchoolCode());
         foreach ($registrations as $registration) {
             $reg = $xml->addChild('Tilmelding');
- 
             foreach ($registration as $key => $value) {
                 foreach (array('.Fastnet', '.Mobil', '.ArbejdeTlf') as $variable) {
                     if (strpos($key, $variable) !== false) {
@@ -106,7 +105,6 @@ class Client implements ClientInterface
                 $reg->addChild($key, $value);
             }
         }
-
         $params = array();
         $params['XmlData'] = new \SoapVar($xml->asXml(), XSD_STRING);
         return new RegistrationsCreateResponse($this->soap->NyTilmelding2($params));
