@@ -11,9 +11,9 @@ class UtilityTest extends \PHPUnit_Framework_TestCase
     public function testGetCountryCodeThatIsFound()
     {
         $utility = new Utility();
-        $this->assertEquals(100, $utility->getCountryCode("Danmark"));
-        $this->assertEquals(100, $utility->getCountryCode("Denmark"));
-        $this->assertEquals(100, $utility->getCountryCode("DK"));
+        $this->assertEquals('Danmark', $utility->getCountryCode("Danmark"));
+        $this->assertEquals('Danmark', $utility->getCountryCode("Denmark"));
+        $this->assertEquals('Danmark', $utility->getCountryCode("DK"));
     }
 
     /**
