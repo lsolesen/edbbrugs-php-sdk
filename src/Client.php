@@ -105,8 +105,10 @@ class Client implements ClientInterface
                 $reg->addChild($key, $value);
             }
         }
+
         $params = array();
         $params['XmlData'] = new \SoapVar($xml->asXml(), XSD_STRING);
+
         return new RegistrationsCreateResponse($this->soap->NyTilmelding2($params));
     }
 
