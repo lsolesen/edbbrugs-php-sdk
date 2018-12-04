@@ -67,11 +67,11 @@ class Client implements ClientInterface
             $reg = $xml->addChild('Tilmelding');
             foreach ($registration as $key => $value) {
                 foreach (array('.Fastnet', '.Mobil', '.ArbejdeTlf') as $variable) {
-                    if (strpos($key, '.Fastnet') !== false) {
+                    if (strpos($key, $variable) !== false) {
                         $value = $this->getUtilityClass()->fixPhoneNumber($value);
                     }
                 }
-                foreach (array('.Kursus', '.Email') as $variable) {
+                foreach (array('Kursus', '.Email') as $variable) {
                     if (strpos($key, $variable) !== false) {
                         $value = substr($value, 0, 50);
                     }

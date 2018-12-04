@@ -91,16 +91,16 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Voksen.Lokalby' => 'Grejs',
                 'Voksen.Postnr' => '7100',
                 'Voksen.Bynavn' => 'Vejle',
-                'Voksen.Fastnet' => '75820811',
+                'Voksen.Fastnet' => '60652045/30374685',
                 'Voksen.FastnetBeskyttet' => 0, // 0 = No, 1 = Yes
-                'Voksen.Mobil' => '75820811',
+                'Voksen.Mobil' => '60652045/30374685',
                 'Voksen.MobilBeskyttet' => 0, // 0 = No, 1 = Yes
                 'Voksen.Email' => 'kontor@vih.dk',
                 'Voksen.Land' => 'Danmark',
             ),
             array(
                 'Kartotek' => 'T3',
-                'Kursus' => 'Forårskursus 18/19',
+                'Kursus' => 'Forårskursus 2019 (24 uger) - KUN ENKELTE PIGEPLADSER TILBAGE',
                 // The following can be repeated for Mor, Far, Voksen
                 'Elev.Fornavn' => 'Ole',
                 'Elev.Efternavn' => 'Damgård',
@@ -125,7 +125,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Voksen.Bynavn' => 'Vejle',
                 'Voksen.Fastnet' => '+45 75 82 08 11',
                 'Voksen.FastnetBeskyttet' => 0, // 0 = No, 1 = Yes
-                'Voksen.Mobil' => '75820811',
+                'Voksen.Mobil' => '+45 75 82 08 11',
                 'Voksen.MobilBeskyttet' => 0, // 0 = No, 1 = Yes
                 'Voksen.Email' => 'kontor@vih.dk',
                 'Voksen.Land' => 'Denmark',
