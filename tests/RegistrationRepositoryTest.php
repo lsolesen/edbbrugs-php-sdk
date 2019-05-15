@@ -292,7 +292,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Elev.Email' => 'kontor@vih.dk',
                 'Elev.Land' => 'Danmark',
                 'EgneFelter.EgetFelt30' => '[Fri084]Ja',
-                'EgneFelter.EgetFelt30' => '[Forening4501]12.12.2018 Web Ja'
+                'EgneFelter.EgetFelt29' => '[Forening4501]12.12.2018 Web Ja'
             ),
         );
         $this->assertEquals(count($registration), $repository->addRegistrations($registration)->getCount());
