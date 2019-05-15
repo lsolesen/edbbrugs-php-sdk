@@ -44,8 +44,8 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Kartotek' => 'T3',
                 'Kursus' => 'Vinterkursus 18/19',
                 // The following can be repeated for Mor, Far, Voksen
-                'Elev.Fornavn' => 'Svend Aage',
-                'Elev.Efternavn' => 'Thomsen',
+                'Elev.Fornavn' => 'Test Webtilmelding',
+                'Elev.Efternavn' => 'Vinterkursus',
                 'Elev.Adresse' => 'Ørnebjergvej 28',
                 'Elev.Lokalby' => 'Grejs',
                 'Elev.Kommune' => 'Vejle',
@@ -102,8 +102,8 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Kartotek' => 'T3',
                 'Kursus' => 'Forårskursus 2019 (24 uger) - KUN ENKELTE PIGEPLADSER TILBAGE',
                 // The following can be repeated for Mor, Far, Voksen
-                'Elev.Fornavn' => 'Ole',
-                'Elev.Efternavn' => 'Damgård',
+                'Elev.Fornavn' => 'Test Webtilmelding',
+                'Elev.Efternavn' => 'Forårskursus',
                 'Elev.Adresse' => 'Ørnebjergvej 28, Ørnebjergvej 28, Ørnebjergvej 28',
                 'Elev.Lokalby' => 'Grejs',
                 'Elev.Postnr' => '7100',
@@ -194,8 +194,12 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
      */
     public function testDateAllCourses()
     {
-        $client = new MockClient();
+        $this->soap = new \SoapClient(WSDL, array('trace' => 1));
+        $credentials = new Credentials(USERNAME, PASSWORD, SKOLEKODE);
+        $client = new Client($credentials, $this->soap);
+
         $repository = new RegistrationRepository($client);
+
         $registration = array(
             array(
                 'Kartotek' => 'T3',
@@ -218,7 +222,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'EgneFelter.EgetFelt7' => '[Fri082]12.12.2018'
             ),
         );
-        $this->assertEquals(count($this->registrations), $repository->addRegistrations($this->registrations)->getCount());
+        $this->assertEquals(count($registration), $repository->addRegistrations($registration)->getCount());
     }
 
     /**
@@ -226,14 +230,18 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
      */
     public function testEducationLongCourses()
     {
-        $client = new MockClient();
+        $this->soap = new \SoapClient(WSDL, array('trace' => 1));
+        $credentials = new Credentials(USERNAME, PASSWORD, SKOLEKODE);
+        $client = new Client($credentials, $this->soap);
+
         $repository = new RegistrationRepository($client);
+
         $registration = array(
             array(
                 'Kartotek' => 'T3',
                 'Kursus' => 'Vinterkursus 18/19',
                 // The following can be repeated for Mor, Far, Voksen
-                'Elev.Fornavn' => 'Test',
+                'Elev.Fornavn' => 'Test Webtilmelding',
                 'Elev.Efternavn' => 'Uddannelsesfelt',
                 'Elev.Adresse' => 'Ørnebjergvej 28',
                 'Elev.Lokalby' => 'Grejs',
@@ -250,7 +258,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'EgneFelter.EgetFelt1' => '[Fri132]Har ungdomsuddannelse'
             ),
         );
-        $this->assertEquals(count($this->registrations), $repository->addRegistrations($this->registrations)->getCount());
+        $this->assertEquals(count($registration), $repository->addRegistrations($registration)->getCount());
     }
 
     /**
@@ -258,15 +266,19 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
      */
     public function testConcentShortCourses()
     {
-        $client = new MockClient();
+        $this->soap = new \SoapClient(WSDL, array('trace' => 1));
+        $credentials = new Credentials(USERNAME, PASSWORD, SKOLEKODE);
+        $client = new Client($credentials, $this->soap);
+
         $repository = new RegistrationRepository($client);
+
         $registration = array(
             array(
                 'Kartotek' => 'T3',
                 'Kursus' => 'Fitness 360, uge 30 2019',
                 // The following can be repeated for Mor, Far, Voksen
                 'Elev.Fornavn' => 'Test Webtilmelding',
-                'Elev.Efternavn' => 'Thomsen',
+                'Elev.Efternavn' => 'Samtykke',
                 'Elev.Adresse' => 'Ørnebjergvej 28',
                 'Elev.Lokalby' => 'Grejs',
                 'Elev.Kommune' => 'Vejle',
@@ -283,7 +295,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'EgneFelter.EgetFelt30' => '[Forening450l]12.12.2018 Web Ja'
             ),
         );
-        $this->assertEquals(count($this->registrations), $repository->addRegistrations($this->registrations)->getCount());
+        $this->assertEquals(count($registration), $repository->addRegistrations($registration)->getCount());
     }
 
     /**
