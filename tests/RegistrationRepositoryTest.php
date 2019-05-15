@@ -190,6 +190,40 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @group IntegrationTest
+     */
+    public function testConcentOnShortCourses()
+    {
+        $client = new MockClient();
+        $repository = new RegistrationRepository($client);
+        $registration = array(
+            array(
+                'Kartotek' => 'T3',
+                'Kursus' => 'Fitness 360, uge 30 2019',
+                // The following can be repeated for Mor, Far, Voksen
+                'Elev.Fornavn' => 'Svend Aage',
+                'Elev.Efternavn' => 'Thomsen',
+                'Elev.Adresse' => 'Ørnebjergvej 28',
+                'Elev.Lokalby' => 'Grejs',
+                'Elev.Kommune' => 'Vejle',
+                'Elev.Postnr' => '7100',
+                'Elev.Bynavn' => 'Vejle',
+                'Elev.CprNr' => '010119421942',
+                'Elev.Fastnet' => '+46 70 716 31 39',
+                'Elev.FastnetBeskyttet' => 0, // 0 = No, 1 = Yes
+                'Elev.Mobil' => '75820811',
+                'Elev.MobilBeskyttet' => 0, // 0 = No, 1 = Yes
+                'Elev.Email' => 'kontor@vih.dk',
+                'Elev.Land' => 'Danmark',
+                'EgneFelter.EgetFelt30' => '[Fri084]Ja',
+                'EgneFelter.EgetFelt30' => '[Forening450l]12.12.2018 Web Ja',
+                'Elev.Notat' => 'Svend Aage Thomsen er skolens grundlægger',
+            ),
+        );
+        $this->assertEquals(count($this->registrations), $repository->addRegistrations($this->registrations)->getCount());
+    }
+
+    /**
      * It is not possible to delete using the webservice.
      * Just testing whether we get expected response.
      *
