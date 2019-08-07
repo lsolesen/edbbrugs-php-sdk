@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/lsolesen/edbbrugs-php-sdk.png?branch=master)](https://travis-ci.org/lsolesen/edbbrugs-php-sdk) [![Code Coverage](https://scrutinizer-ci.com/g/lsolesen/edbbrugs-php-sdk/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/lsolesen/edbbrugs-php-sdk/?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/lsolesen/edbbrugs-php-sdk/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/lsolesen/edbbrugs-php-sdk/?branch=master) [![Latest Stable Version](https://poser.pugx.org/lsolesen/edbbrugs-php-sdk/v/stable)](https://packagist.org/packages/lsolesen/edbbrugs-php-sdk) [![Total Downloads](https://poser.pugx.org/lsolesen/edbbrugs-php-sdk/downloads)](https://packagist.org/packages/lsolesen/edbbrugs-php-sdk) [![License](https://poser.pugx.org/lsolesen/edbbrugs-php-sdk/license)](https://packagist.org/packages/lsolesen/edbbrugs-php-sdk)
 
-PHP 5 SDK to communicate with [De frie skolers EDB-BRUGS](http://edb-brugs.dk).
+PHP 7 SDK to communicate with [De frie skolers EDB-BRUGS](http://edb-brugs.dk).
 
 ## Requirements
 
@@ -25,7 +25,7 @@ To get access to the service, you need to contact the [support at EDB-BRUGS](htt
 
 ### Composer
 
-Simply add a dependency on lsolesen/edbbrugs-php-sdk to your project's `composer.json` file if you use Composer to manage the dependencies of your project. Here is a minimal example of a composer.json file that just defines a dependency on Billy PHP SDK 2.1:
+Simply add a dependency on lsolesen/edbbrugs-php-sdk to your project's `composer.json` file if you use Composer to manage the dependencies of your project. Here is a minimal example of a `composer.json` file that just defines a dependency on EDBBrugs-PHP-SDK:
 
 ```
 {
@@ -39,7 +39,7 @@ After running `composer install`, you can take advantage of Composer's autoloade
 
 ## Usage
 
-```php5
+```php
 <?php
 use EDBBrugs\Client;
 use EDBBrugs\Credentials;
@@ -95,6 +95,18 @@ $registration_repository->getNewRegistrations();
 // Get handled registrations.
 $registration_repository->getHandledRegistrations();
 ?>
+```
+
+If you need to put something into custom fields, you will have to do like this:
+
+```php
+// Add registrations.
+$registrations = array(
+    array(
+        'Kartotek' => 'XX', // required - provided by the user of EDB-Brugs
+        'EgneFelter.EgetFelt30' => '[Forening450l]12.12.2018 Web Ja'
+    )
+);
 ```
 
 ## Testing
