@@ -44,8 +44,8 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Kartotek' => 'T3',
                 'Kursus' => 'Vinterkursus 18/19',
                 // The following can be repeated for Mor, Far, Voksen
-                'Elev.Fornavn' => 'Svend Aage',
-                'Elev.Efternavn' => 'Thomsen',
+                'Elev.Fornavn' => 'Test Webtilmelding',
+                'Elev.Efternavn' => 'Vinterkursus',
                 'Elev.Adresse' => 'Ørnebjergvej 28',
                 'Elev.Lokalby' => 'Grejs',
                 'Elev.Kommune' => 'Vejle',
@@ -102,8 +102,8 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Kartotek' => 'T3',
                 'Kursus' => 'Forårskursus 2019 (24 uger) - KUN ENKELTE PIGEPLADSER TILBAGE',
                 // The following can be repeated for Mor, Far, Voksen
-                'Elev.Fornavn' => 'Ole',
-                'Elev.Efternavn' => 'Damgård',
+                'Elev.Fornavn' => 'Test Webtilmelding',
+                'Elev.Efternavn' => 'Forårskursus',
                 'Elev.Adresse' => 'Ørnebjergvej 28, Ørnebjergvej 28, Ørnebjergvej 28',
                 'Elev.Lokalby' => 'Grejs',
                 'Elev.Postnr' => '7100',
@@ -187,6 +187,115 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
             print $this->soap->__getLastRequest();
             print $this->soap->__getLastResponse();
         }
+    }
+
+    /**
+     * @group IntegrationTest
+     */
+    public function testDateAllCourses()
+    {
+        $this->soap = new \SoapClient(WSDL, array('trace' => 1));
+        $credentials = new Credentials(USERNAME, PASSWORD, SKOLEKODE);
+        $client = new Client($credentials, $this->soap);
+
+        $repository = new RegistrationRepository($client);
+
+        $registration = array(
+            array(
+                'Kartotek' => 'T3',
+                'Kursus' => 'Fitness 360, uge 30 2019',
+                // The following can be repeated for Mor, Far, Voksen
+                'Elev.Fornavn' => 'Test Webtilmelding',
+                'Elev.Efternavn' => 'Uddannelsesfelt',
+                'Elev.Adresse' => 'Ørnebjergvej 28',
+                'Elev.Lokalby' => 'Grejs',
+                'Elev.Kommune' => 'Vejle',
+                'Elev.Postnr' => '7100',
+                'Elev.Bynavn' => 'Vejle',
+                'Elev.CprNr' => '010119421942',
+                'Elev.Fastnet' => '+46 70 716 31 39',
+                'Elev.FastnetBeskyttet' => 0, // 0 = No, 1 = Yes
+                'Elev.Mobil' => '75820811',
+                'Elev.MobilBeskyttet' => 0, // 0 = No, 1 = Yes
+                'Elev.Email' => 'kontor@vih.dk',
+                'Elev.Land' => 'Danmark',
+                'EgneFelter.EgetFelt7' => '[Fri082]12.12.2018'
+            ),
+        );
+        $this->assertEquals(count($registration), $repository->addRegistrations($registration)->getCount());
+    }
+
+    /**
+     * @group IntegrationTest
+     */
+    public function testEducationLongCourses()
+    {
+        $this->soap = new \SoapClient(WSDL, array('trace' => 1));
+        $credentials = new Credentials(USERNAME, PASSWORD, SKOLEKODE);
+        $client = new Client($credentials, $this->soap);
+
+        $repository = new RegistrationRepository($client);
+
+        $registration = array(
+            array(
+                'Kartotek' => 'T3',
+                'Kursus' => 'Vinterkursus 18/19',
+                // The following can be repeated for Mor, Far, Voksen
+                'Elev.Fornavn' => 'Test Webtilmelding',
+                'Elev.Efternavn' => 'Uddannelsesfelt',
+                'Elev.Adresse' => 'Ørnebjergvej 28',
+                'Elev.Lokalby' => 'Grejs',
+                'Elev.Kommune' => 'Vejle',
+                'Elev.Postnr' => '7100',
+                'Elev.Bynavn' => 'Vejle',
+                'Elev.CprNr' => '010119421942',
+                'Elev.Fastnet' => '+46 70 716 31 39',
+                'Elev.FastnetBeskyttet' => 0, // 0 = No, 1 = Yes
+                'Elev.Mobil' => '75820811',
+                'Elev.MobilBeskyttet' => 0, // 0 = No, 1 = Yes
+                'Elev.Email' => 'kontor@vih.dk',
+                'Elev.Land' => 'Danmark',
+                'EgneFelter.EgetFelt1' => '[Fri132]Har ungdomsuddannelse'
+            ),
+        );
+        $this->assertEquals(count($registration), $repository->addRegistrations($registration)->getCount());
+    }
+
+    /**
+     * @group IntegrationTest
+     */
+    public function testConcentShortCourses()
+    {
+        $this->soap = new \SoapClient(WSDL, array('trace' => 1));
+        $credentials = new Credentials(USERNAME, PASSWORD, SKOLEKODE);
+        $client = new Client($credentials, $this->soap);
+
+        $repository = new RegistrationRepository($client);
+
+        $registration = array(
+            array(
+                'Kartotek' => 'T3',
+                'Kursus' => 'Fitness 360, uge 30 2019',
+                // The following can be repeated for Mor, Far, Voksen
+                'Elev.Fornavn' => 'Test Webtilmelding',
+                'Elev.Efternavn' => 'Samtykke',
+                'Elev.Adresse' => 'Ørnebjergvej 28',
+                'Elev.Lokalby' => 'Grejs',
+                'Elev.Kommune' => 'Vejle',
+                'Elev.Postnr' => '7100',
+                'Elev.Bynavn' => 'Vejle',
+                'Elev.CprNr' => '010119421942',
+                'Elev.Fastnet' => '+46 70 716 31 39',
+                'Elev.FastnetBeskyttet' => 0, // 0 = No, 1 = Yes
+                'Elev.Mobil' => '75820811',
+                'Elev.MobilBeskyttet' => 0, // 0 = No, 1 = Yes
+                'Elev.Email' => 'kontor@vih.dk',
+                'Elev.Land' => 'Danmark',
+                'EgneFelter.EgetFelt30' => '[Fri084]Ja',
+                'EgneFelter.EgetFelt29' => '[Forening4501]12.12.2018 Web Ja'
+            ),
+        );
+        $this->assertEquals(count($registration), $repository->addRegistrations($registration)->getCount());
     }
 
     /**
