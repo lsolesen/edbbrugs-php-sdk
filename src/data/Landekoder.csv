@@ -37,7 +37,6 @@ ID;Nationalitet;Nationality;Kode;IsoKode
 36;Colombia;Colombia;318;CO
 37;Comorerne;Comoros;215;CC
 38;Congo;;279;CG
-39;Cook Øerne;Cook Islands;516;CK
 40;Costa Rica;Costa Rica;322;CR
 41;Cuba;Cuba;324;CU
 42;Curacao;Curaçao;325;CW
@@ -53,14 +52,12 @@ ID;Nationalitet;Nationality;Kode;IsoKode
 52;Eritrea;Eritrea;216;ER
 53;Estland;Estonia;607;EE
 54;Ethiopien;Ethiopia;214;ET
-55;Falklands Øerne;Falkland Islands;530;FK
 56;Fiji;Fiji;508;FJ
 57;Finland;Finland;104;FI
 58;For. Arab. Emirater;United Arab Emirates;403;AE
 59;Frankrig;France;130;FR
 60;Fransk Besidd. i Stillehavet;;506;TF
 61;Fransk Guyana;French Guiana;529;GF
-62;Færøerne;Faroe Islands;902;FO
 63;Gabon;Gabon;283;GA
 64;Gambia;Gambia;222;GM
 65;Georgien;Georgia;724;GE
@@ -147,7 +144,6 @@ ID;Nationalitet;Nationality;Kode;IsoKode
 146;Rumænien;Romania;158;RO
 147;Rusland;Russia;700;RU
 148;Rwanda;Rwanda;287;RW
-149;Salomon Øerne;Solomon Islands;623;SB
 150;Samoa;Samoa;522;AS
 151;San Marino;San Marino;159;SM
 152;Sankt Lucia;Saint Lucia;347;LC
@@ -207,3 +203,7 @@ ID;Nationalitet;Nationality;Kode;IsoKode
 206;Serbien;Serbia;779;RS
 207;Zimbabwe;Zimbabwe;295;ZW
 208;Montenegro;Montenegro;382;ME
+62;Færøerne;Faroe Islands;902;FO
+39;Cook Øerne;Cook Islands;516;CK
+55;Falklands Øerne;Falkland Islands;530;FK
+149;Salomon Øerne;Solomon Islands;623;SB
