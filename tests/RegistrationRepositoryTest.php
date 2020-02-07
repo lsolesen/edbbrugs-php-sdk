@@ -51,7 +51,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Elev.Kommune' => 'Vejle',
                 'Elev.Postnr' => '7100',
                 'Elev.Bynavn' => 'Vejle',
-                'Elev.CprNr' => '010119421942',
+                'Elev.CprNr' => '0101421942',
                 'Elev.Fastnet' => '+46 70 716 31 39',
                 'Elev.FastnetBeskyttet' => 0, // 0 = No, 1 = Yes
                 'Elev.Mobil' => '75820811',
@@ -109,7 +109,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Elev.Postnr' => '7100',
                 'Elev.Bynavn' => 'Vejle',
                 'Elev.Kommune' => 'Vejle',
-                'Elev.CprNr' => '010119421942',
+                'Elev.CprNr' => '0101421942',
                 'Elev.Fastnet' => '+45 75 82 08 11',
                 'Elev.FastnetBeskyttet' => 0, // 0 = No, 1 = Yes
                 'Elev.Mobil' => '75820811',
@@ -212,7 +212,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Elev.Kommune' => 'Vejle',
                 'Elev.Postnr' => '7100',
                 'Elev.Bynavn' => 'Vejle',
-                'Elev.CprNr' => '010119421942',
+                'Elev.CprNr' => '0101421942',
                 'Elev.Fastnet' => '+46 70 716 31 39',
                 'Elev.FastnetBeskyttet' => 0, // 0 = No, 1 = Yes
                 'Elev.Mobil' => '75820811',
@@ -248,7 +248,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Elev.Kommune' => 'Vejle',
                 'Elev.Postnr' => '7100',
                 'Elev.Bynavn' => 'Vejle',
-                'Elev.CprNr' => '010119421942',
+                'Elev.CprNr' => '0101421942',
                 'Elev.Fastnet' => '+46 70 716 31 39',
                 'Elev.FastnetBeskyttet' => 0, // 0 = No, 1 = Yes
                 'Elev.Mobil' => '75820811',
@@ -264,7 +264,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
     /**
      * @group IntegrationTest
      */
-    public function testConcentShortCourses()
+    public function testConcentGdprMarketingCourses()
     {
         $this->soap = new \SoapClient(WSDL, array('trace' => 1));
         $credentials = new Credentials(USERNAME, PASSWORD, SKOLEKODE);
@@ -284,7 +284,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Elev.Kommune' => 'Vejle',
                 'Elev.Postnr' => '7100',
                 'Elev.Bynavn' => 'Vejle',
-                'Elev.CprNr' => '010119421942',
+                'Elev.CprNr' => '0101421942',
                 'Elev.Fastnet' => '+46 70 716 31 39',
                 'Elev.FastnetBeskyttet' => 0, // 0 = No, 1 = Yes
                 'Elev.Mobil' => '75820811',
@@ -292,7 +292,78 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Elev.Email' => 'kontor@vih.dk',
                 'Elev.Land' => 'Danmark',
                 'EgneFelter.EgetFelt30' => '[Fri084]Ja',
-                'EgneFelter.EgetFelt29' => '[Forening4501]12.12.2018 Web Ja'
+                'EgneFelter.EgetFelt29' => '[Forening4501]12.12.2018 Web Ja',
+                'EgneFelter.EgetFelt28' => '[Forening4502]12.12.2018 Web Ja'
+            ),
+        );
+        $this->assertEquals(count($registration), $repository->addRegistrations($registration)->getCount());
+    }
+
+    /**
+     * @group IntegrationTest
+     */
+    public function testBirthdayOnlyCourses()
+    {
+        $this->soap = new \SoapClient(WSDL, array('trace' => 1));
+        $credentials = new Credentials(USERNAME, PASSWORD, SKOLEKODE);
+        $client = new Client($credentials, $this->soap);
+
+        $repository = new RegistrationRepository($client);
+
+        $registration = array(
+            array(
+                'Kartotek' => 'T3',
+                'Kursus' => 'Fitness 360, uge 30 2019',
+                // The following can be repeated for Mor, Far, Voksen
+                'Elev.Fornavn' => 'Test Webtilmelding',
+                'Elev.Efternavn' => 'Birthday Only',
+                'Elev.Adresse' => 'Ørnebjergvej 28',
+                'Elev.Lokalby' => 'Grejs',
+                'Elev.Kommune' => 'Vejle',
+                'Elev.Postnr' => '7100',
+                'Elev.Bynavn' => 'Vejle',
+                'Elev.CprNr' => '010142',
+                'Elev.Fastnet' => '+46 70 716 31 39',
+                'Elev.FastnetBeskyttet' => 0, // 0 = No, 1 = Yes
+                'Elev.Mobil' => '75820811',
+                'Elev.MobilBeskyttet' => 0, // 0 = No, 1 = Yes
+                'Elev.Email' => 'kontor@vih.dk',
+                'Elev.Land' => 'Danmark'
+            ),
+        );
+        $this->assertEquals(count($registration), $repository->addRegistrations($registration)->getCount());
+    }
+
+    /**
+     * @group IntegrationTest
+     */
+    public function testNameWithAndSign()
+    {
+        $this->soap = new \SoapClient(WSDL, array('trace' => 1));
+        $credentials = new Credentials(USERNAME, PASSWORD, SKOLEKODE);
+        $client = new Client($credentials, $this->soap);
+
+        $repository = new RegistrationRepository($client);
+
+        $registration = array(
+            array(
+                'Kartotek' => 'T3',
+                'Kursus' => 'Body & Mind, uge 30 2019',
+                // The following can be repeated for Mor, Far, Voksen
+                'Elev.Fornavn' => 'Test Webtilmelding And Sign',
+                'Elev.Efternavn' => 'And Sign',
+                'Elev.Adresse' => 'Ørnebjergvej 28',
+                'Elev.Lokalby' => 'Grejs',
+                'Elev.Kommune' => 'Vejle',
+                'Elev.Postnr' => '7100',
+                'Elev.Bynavn' => 'Vejle',
+                'Elev.CprNr' => '010142',
+                'Elev.Fastnet' => '+46 70 716 31 39',
+                'Elev.FastnetBeskyttet' => 0, // 0 = No, 1 = Yes
+                'Elev.Mobil' => '75820811',
+                'Elev.MobilBeskyttet' => 0, // 0 = No, 1 = Yes
+                'Elev.Email' => 'kontor@vih.dk',
+                'Elev.Land' => 'Danmark'
             ),
         );
         $this->assertEquals(count($registration), $repository->addRegistrations($registration)->getCount());

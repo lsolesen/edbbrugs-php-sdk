@@ -102,7 +102,7 @@ class Client implements ClientInterface
                 if (strpos($key, '.Kommune') !== false) {
                     $value = $this->getUtilityClass()->getMunicipalityCode($value);
                 }
-                $reg->addChild($key, $value);
+                $reg->addChild($key, htmlspecialchars($value));
             }
         }
 
