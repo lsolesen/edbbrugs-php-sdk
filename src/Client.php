@@ -86,6 +86,11 @@ class Client implements ClientInterface
                         $value = substr($value, 0, 30);
                     }
                 }
+                foreach (array('.TidlSkole') as $variable) {
+                    if (strpos($key, $variable) !== false) {
+                        $value = substr($value, 0, 48);
+                    }
+                }
                 foreach (array('.CprNr') as $variable) {
                     if (strpos($key, $variable) !== false) {
                         $value = substr($value, 0, 20);

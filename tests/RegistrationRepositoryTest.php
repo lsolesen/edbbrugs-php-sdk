@@ -57,6 +57,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Elev.Mobil' => '75820811',
                 'Elev.MobilBeskyttet' => 0, // 0 = No, 1 = Yes
                 'Elev.Email' => 'kontor@vih.dk',
+                'Elev.TidlSkole' => 'Vejle Idrætshøjskole Ørnebjergvej 28 7100 Vejle Den Jyske Idrætsskole',
                 'Elev.Land' => 'Danmark',
                 'EgneFelter.EgetFelt1' => '[Fri132]Har ungdomsuddannelse',
                 'EgneFelter.EgetFelt7' => '[Fri082]12.12.2018',
