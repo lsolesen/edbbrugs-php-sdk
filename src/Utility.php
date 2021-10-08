@@ -36,6 +36,9 @@ class Utility implements UtilityInterface
     public function getCountryCode($country)
     {
         $rows = $this->getCSV(DIRNAME(__FILE__) . "/data/Landekoder.csv", $country);
+        if ($rows == 0) {
+            return 0;
+        }
         $stored_in_column = 1;
         return $rows[$stored_in_column];
     }
@@ -50,6 +53,9 @@ class Utility implements UtilityInterface
     public function getMunicipalityCode($municipality)
     {
         $rows = $this->getCSV(DIRNAME(__FILE__) . "/data/Kommuner.csv", $municipality);
+        if ($rows == 0) {
+            return 0;
+        }
         $stored_in_column = 2;
         return $rows[$stored_in_column];
     }
@@ -67,6 +73,17 @@ class Utility implements UtilityInterface
         return $string;
     }
 
+    /**
+     * Make sure that 'klasse' only returns number
+     *
+     * $param string $class Klasse string
+     *
+     * $return integer
+     */
+    public function fixClass($class)
+    {
+        return preg_replace('/[^0-9]/', '', $class);
+    }
 
     /**
      * Loops through csv file and stops with search

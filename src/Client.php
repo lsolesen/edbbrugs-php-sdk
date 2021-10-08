@@ -86,11 +86,6 @@ class Client implements ClientInterface
                         $value = substr($value, 0, 30);
                     }
                 }
-                foreach (array('.TidlSkole') as $variable) {
-                    if (strpos($key, $variable) !== false) {
-                        $value = substr($value, 0, 48);
-                    }
-                }
                 foreach (array('.CprNr') as $variable) {
                     if (strpos($key, $variable) !== false) {
                         $value = substr($value, 0, 20);
@@ -106,6 +101,17 @@ class Client implements ClientInterface
                 }
                 if (strpos($key, '.Kommune') !== false) {
                     $value = $this->getUtilityClass()->getMunicipalityCode($value);
+                }
+                foreach (array('.TidlSkole') as $variable) {
+                    if (strpos($key, $variable) !== false) {
+                        $value = substr($value, 0, 48);
+                    }
+                }
+                foreach (array('.Klasse') as $variable) {
+                    if (strpos($key, $variable) !== false) {
+                        $value = substr($value, 0, 2);
+                        $value = $this->getUtilityClass()->fixClass($value);
+                    }
                 }
                 $reg->addChild($key, htmlspecialchars($value));
             }
