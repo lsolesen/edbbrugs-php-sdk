@@ -247,6 +247,7 @@ class RegistrationRepositoryTest extends \PHPUnit_Framework_TestCase
                 'Elev.Adresse' => 'Ørnebjergvej 28',
                 'Elev.Lokalby' => 'Grejs',
                 'Elev.Kommune' => 'Vejle',
+                'Elev.Klasse' => '9.',
                 'Elev.Postnr' => '7100',
                 'Elev.Bynavn' => 'Vejle',
                 'Elev.CprNr' => '0101421942',

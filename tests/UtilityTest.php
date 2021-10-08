@@ -44,4 +44,14 @@ class UtilityTest extends \PHPUnit_Framework_TestCase
         $utility = new Utility();
         $this->assertEquals(0, $utility->getMunicipalityCode("NotFound"));
     }
+
+    /**
+     * Test FixClass()
+     */
+    public function testFixClassReturnsNumericValue()
+    {
+        $utility = new Utility();
+        $this->assertEquals(9, $utility->fixClass("9."));
+        $this->assertTrue(is_numeric($utility->fixClass("9.")));
+    }
 }
